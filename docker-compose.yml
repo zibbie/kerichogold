@@ -1,23 +1,22 @@
 services:
   app:
-    container_name: v2-app
+    container_name: kericho-app
     build:
       context: .
       dockerfile: docker/app.Dockerfile
     volumes:
       - .:/var/www/html
-      - /Volumes/Third/Users/zbyszek/kerichogold:/var/www/kerichogold
     environment:
-      - APP_ENV=local
-      - APP_DEBUG=true
+      - APP_ENV=production
+      - APP_DEBUG=false
     networks:
-      - v2-network
+      - kericho-network
     depends_on:
       - db
       - redis
 
   queue:
-    container_name: v2-queue
+    container_name: kericho-queue
     build:
       context: .
       dockerfile: docker/app.Dockerfile
@@ -27,7 +26,7 @@ services:
       - APP_ENV=production
     command: php artisan queue:work --verbose --tries=3 --timeout=90
     networks:
-      - v2-network
+      - kericho-network
     depends_on:
       - db
       - redis
@@ -35,18 +34,15 @@ services:
 
   redis:
     image: redis:alpine
-    container_name: v2-redis
+    container_name: kericho-redis
     networks:
-      - v2-network
+      - kericho-network
     ports:
       - "6380:6379"
 
   web:
-    container_name: v2-web
+    container_name: kericho-web
     image: nginx:alpine
-    # Ports 80 and 443 will be handled by Nginx Proxy Manager
-    ports:
-      - "8080:80"
     expose:
       - "80"
     volumes:
@@ -54,55 +50,59 @@ services:
       - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf
       - ./storage/logs/nginx:/var/log/nginx
     networks:
-      - v2-network
+      - kericho-network
     depends_on:
       - app
 
   nginx-proxy:
     image: 'jc21/nginx-proxy-manager:latest'
-    container_name: v2-proxy
+    container_name: kericho-proxy
     restart: always
     ports:
       - '80:80'
       - '81:81'
       - '443:443'
+    environment:
+      - INITIAL_ADMIN_EMAIL=admin@example.com
+      - INITIAL_ADMIN_PASSWORD=changeme
     volumes:
       - ./docker/proxy/data:/data
       - ./docker/proxy/letsencrypt:/etc/letsencrypt
     networks:
-      - v2-network
+      - kericho-network
 
   db:
-    container_name: v2-db
+    container_name: kericho-db
     image: postgres:15-alpine
     environment:
       - POSTGRES_DB=${DB_DATABASE:-kericho_v2}
       - POSTGRES_USER=${DB_USERNAME:-kericho}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
     volumes:
-      - v2-db-data:/var/lib/postgresql/data
+      - kericho-db-data:/var/lib/postgresql/data
     networks:
-      - v2-network
+      - kericho-network
 
   meilisearch:
     image: getmeili/meilisearch:v1.7
-    container_name: v2-meilisearch
+    container_name: kericho-meilisearch
     ports:
       - "7700:7700"
     environment:
       - MEILI_MASTER_KEY=${MEILISEARCH_KEY:-masterKey}
       - MEILI_NO_ANALYTICS=true
-      - MEILI_ENV=development
+      - MEILI_ENV=production
     volumes:
-      - v2-meilisearch-data:/meili_data
+      - kericho-meilisearch-data:/meili_data
     networks:
-      - v2-network
+      - kericho-network
 
 networks:
-  v2-network:
+  kericho-network:
     driver: bridge
+    name: kericho-network
 
 volumes:
-  v2-db-data:
-  v2-meilisearch-data:
+  kericho-db-data:
+  kericho-meilisearch-data:
 
