@@ -458,9 +458,14 @@ docker exec kericho-staging-app php artisan optimize:clear
 ```
 
 ### C. Weryfikacja testów:
+Jeśli composer został uruchomiony bez flagi `--no-dev` (środowisko developerskie), możesz uruchomić pełne testy:
 ```bash
 docker exec kericho-app php artisan test
-docker exec kericho-staging-app php artisan test
+```
+Na produkcji/stagingu (z `--no-dev`) uruchamiamy testy bezpieczeństwa integracji:
+```bash
+docker exec kericho-app php artisan test:tpay-security
+docker exec kericho-staging-app php artisan test:tpay-security
 ```
 
 ---
