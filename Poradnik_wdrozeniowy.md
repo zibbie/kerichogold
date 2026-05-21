@@ -1,6 +1,6 @@
-# Poradnik Wdrożeniowy: Nevro-Shop v2 & Antigravity
+# Poradnik Wdrożeniowy: Kericho Gold & Antigravity
 
-Witaj w świecie Nevro-Shop v2! Ten dokument przeprowadzi Cię przez proces instalacji i uruchomienia Twojego nowego sklepu w Internecie. Zrobimy to w sposób nowoczesny, wykorzystując moc Twojego osobistego agenta AI — **Antigravity**.
+Witaj w świecie Kericho Gold! Ten dokument przeprowadzi Cię przez proces instalacji i uruchomienia Twojego nowego sklepu w Internecie. Zrobimy to w sposób nowoczesny, wykorzystując moc Twojego osobistego agenta AI — **Antigravity**.
 
 ---
 
@@ -32,7 +32,7 @@ Antigravity to Twój agent kodujący, który wykona za Ciebie 90% pracy technicz
 
 ## KROK 3: Wybór Hostingu (VPS)
 
-Dla Nevro-Shop v2 (ze względu na silnik Meilisearch i Docker) **niezbędny jest serwer typu VPS** (np. DigitalOcean, Linode, Hetzner lub polskie OVH/cyber_Folks).
+Dla Kericho Gold (ze względu na silnik Meilisearch i Docker) **niezbędny jest serwer typu VPS** (np. DigitalOcean, Linode, Hetzner lub polskie OVH/cyber_Folks).
 *   **Minimalne wymagania:** 2 vCPU, 4GB RAM, 40GB SSD.
 *   **System operacyjny:** Ubuntu 22.04 LTS lub nowszy.
 
@@ -44,7 +44,7 @@ Teraz zaczyna się magia. Nie musisz pisać kodu ani znać komend Linuxa. Po pro
 
 ### Prompt 1: Przygotowanie Serwera
 Wpisz to jako pierwszą wiadomość po otwarciu folderu:
-> "Cześć! Mam gotowy serwer VPS o adresie IP [WPISZ_TU_IP_SWOJEGO_SERWERA]. Chcę wdrożyć ten sklep Nevro-Shop v2. Zacznij od sprawdzenia moich plików konfiguracyjnych i pomóż mi połączyć się z serwerem przez SSH, a następnie zainstaluj tam Dockera i wszystkie niezbędne zależności."
+> "Cześć! Mam gotowy serwer VPS o adresie IP [WPISZ_TU_IP_SWOJEGO_SERWERA]. Chcę wdrożyć ten sklep Kericho Gold. Zacznij od sprawdzenia moich plików konfiguracyjnych i pomóż mi połączyć się z serwerem przez SSH, a następnie zainstaluj tam Dockera i wszystkie niezbędne zależności."
 
 ### Prompt 2: Konfiguracja Domeny i SSL
 Gdy agent skończy pierwszy krok, wpisz:
@@ -77,4 +77,4 @@ Agent sam zdiagnozuje problem, poprawi konfigurację i dokończy instalację.
 *   **Agentic AI Support** (Twój sklep "rozmawia" z botami AI).
 
 ---
-*Nevro-Shop v2 — Twój sukces zaczyna się tutaj.*
+*Kericho Gold — Twój sukces zaczyna się tutaj.*

@@ -73,7 +73,7 @@ return [
         'order_source_id' => env('BASELINKER_ORDER_SOURCE_ID', 0),
         'invoice_series_id' => env('BASELINKER_INVOICE_SERIES_ID'),
         'status_map' => [
-            // Nevro status => BaseLinker status_id (klient konfiguruje po założeniu konta)
+            // Shop status => BaseLinker status_id (klient konfiguruje po założeniu konta)
             'pending'    => env('BL_STATUS_PENDING', 0),
             'paid'       => env('BL_STATUS_PAID', 0),
             'processing' => env('BL_STATUS_PROCESSING', 0),

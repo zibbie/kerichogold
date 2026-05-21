@@ -1,7 +1,7 @@
 {
-  "name": "Nevro-Shop — Zbiorniki IBC",
-  "short_name": "Nevro-Shop",
-  "description": "Profesjonalne zbiorniki IBC i akcesoria ogrodowe",
+  "name": "Kericho Gold Polska — Herbata Kenijska Premium",
+  "short_name": "Kericho Gold",
+  "description": "Ekskluzywne herbaty kenijskie premium — czarne, zielone, ziołowe i owocowe",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f7faf5",
@@ -20,7 +20,7 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["shopping", "garden"],
+  "categories": ["shopping", "beverages"],
   "screenshots": [
     {
       "src": "/images/pwa/screenshot-mobile.png",

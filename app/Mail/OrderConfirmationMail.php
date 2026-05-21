@@ -30,7 +30,7 @@ class OrderConfirmationMail extends Mailable implements ShouldQueue
     {
         $order = \App\Models\Order::findOrFail($this->orderId);
         return new Envelope(
-            subject: 'Potwierdzenie zamówienia #' . $order->order_number . ' | Sklep NEVRO',
+            subject: 'Potwierdzenie zamówienia #' . $order->order_number . ' | Kericho Gold',
         );
     }
 

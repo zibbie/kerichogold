@@ -73,7 +73,7 @@ class Category extends Model
      */
     public function getSeoTitleAttribute(): string
     {
-        return $this->meta_title ?: $this->name . ' - Rozwiązania dla biura | Nevro-Shop';
+        return $this->meta_title ?: $this->name . ' - Najlepsza Herbata z Kenii | Kericho Gold';
     }
 
     /**
@@ -85,7 +85,7 @@ class Category extends Model
             return $this->meta_description;
         }
 
-        $fallback = $this->description ? strip_tags($this->description) : "Poznaj produkty z kategorii {$this->name} w Nevro-Shop. Wyselekcjonowane akcesoria i meble dla Twojego miejsca pracy.";
+        $fallback = $this->description ? strip_tags($this->description) : "Poznaj produkty z kategorii {$this->name} w Kericho Gold. Wyselekcjonowane, oryginalne kenijskie herbaty dla każdego.";
         return Str::limit($fallback, 160);
     }
 }

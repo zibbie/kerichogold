@@ -90,7 +90,7 @@ Route::get('/offline', function () {
 
 // Temporary: reset admin password (remove after use)
 Route::get('/dev/reset-password', function () {
-    $u = \App\Models\User::where('email', 'admin@nevro-wm.pl')->first();
+    $u = \App\Models\User::where('email', 'admin@kerichogold.pl')->first();
     if (!$u) return 'User not found';
     $u->password = \Illuminate\Support\Facades\Hash::make('admin123');
     $u->save();

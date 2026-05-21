@@ -100,7 +100,7 @@ class McpController extends Controller
             'price' => $product->price . ' PLN',
             'stock_status' => $product->quantity > 0 ? 'In Stock' : 'Out of Stock',
             'category' => $product->category?->name,
-            'brand' => 'Nevro',
+            'brand' => 'Kericho Gold',
             'url' => route('product.details', $product->slug)
         ];
     }

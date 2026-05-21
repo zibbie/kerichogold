@@ -1,4 +1,4 @@
-# 🏗️ WIELKA KSIĘGA ZARZĄDZANIA: NEVRO-SHOP v2
+# 🏗️ WIELKA KSIĘGA ZARZĄDZANIA: KERICHO GOLD
 ## Kompletny przewodnik operacyjny dla właściciela sklepu
 
 Witaj w kompletnym manualu Twojego systemu e-commerce. Ten dokument został stworzony, abyś nigdy nie musiała zgadywać "do czego służy ten przycisk". Opisuje on każdy element panelu administracyjnego (Filament) w sposób precyzyjny i wyczerpujący.
@@ -130,7 +130,7 @@ System obsługuje drzewiastą strukturę kategorii (kategorie nadrzędne i podka
 ### 3.2 Taksonomia Google (Google Product Category ID)
 To pole jest kluczem do sukcesu Twoich kampanii reklamowych.
 *   **Czym jest GPC?**: To oficjalna lista tysięcy kategorii zdefiniowanych przez Google. Każdy produkt wysyłany do reklam musi mieć przypisany taki kod.
-*   **Jak to działa w Nevro-Shop?**: Zamiast ustawiać kod dla każdego produktu z osobna, ustawiasz go raz w kategorii głównej. Wszystkie produkty w tej kategorii automatycznie "odziedziczą" ten kod.
+*   **Jak to działa w Kericho Gold?**: Zamiast ustawiać kod dla każdego produktu z osobna, ustawiasz go raz w kategorii głównej. Wszystkie produkty w tej kategorii automatycznie "odziedziczą" ten kod.
 *   **Przykład**: Dla kategorii "Akcesoria IBC" wpisujesz kod `505315`. Dzięki temu Google wie, że Twoje produkty to "Części hydrauliczne", a nie np. zabawki, co drastycznie zwiększa skuteczność reklam.
 
 ### 3.3 Wizualizacja i Menu
@@ -170,7 +170,7 @@ Zakładka **Strony CMS** służy do tworzenia treści, które nie są produktami
 *   **SEO Strony**: Każda strona CMS ma własne meta-tagi. Jeśli tworzysz np. stronę o serwisie zbiorników, zadbaj o unikalny Meta Title, aby klienci szukający serwisu trafili prosto do Ciebie.
 
 ### 4.2 Hero Banner (Wielka Witryna Sklepu)
-To pierwszy element, który widzi klient po wejściu na `nevro-wm.pl`.
+To pierwszy element, który widzi klient po wejściu na `sklep.kerichogold.com.pl`.
 *   **Zarządzanie grafiką**: Wgrywaj zdjęcia w wysokiej rozdzielczości (rekomendowane 1920x600 px). 
 *   **Efekt Glassmorphism**: To unikalna funkcja Twojego sklepu. Jeśli Twoje zdjęcie banerowe jest bardzo jasne lub wielokolorowe, włącz tę opcję. Pod tekstem pojawi się elegancki efekt "szronionego szkła", który sprawi, że napisy będą zawsze czytelne i ekskluzywne.
 *   **Teksty i Przyciski**: 
@@ -298,4 +298,4 @@ Ten rozdział to Twój "zeszyt ratunkowy". Znajdziesz tu odpowiedzi na najczęst
 3.  **RODO**: Nigdy nie wysyłaj bazy e-maili klientów niezaszyfrowanymi kanałami. Pamiętaj, że dane Twoich klientów to Twoja odpowiedzialność prawna.
 
 ---
-*Nevro-Shop v2 — Kompendium Wiedzy (Ostatnia aktualizacja: 11.05.2026).*
+*Kericho Gold Polska — Kompendium Wiedzy (Ostatnia aktualizacja: 11.05.2026).*

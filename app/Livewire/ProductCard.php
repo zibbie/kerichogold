@@ -29,7 +29,7 @@ class ProductCard extends Component
                     [
                         'item_id' => (string) $this->product->id,
                         'item_name' => $this->product->name,
-                        'item_brand' => 'Nevro',
+                        'item_brand' => 'Kericho Gold',
                         'price' => (float) $this->product->price,
                         'quantity' => 1,
                     ]

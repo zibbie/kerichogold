@@ -1,6 +1,6 @@
-# Nevro-Shop v2 — Premium E-commerce Platform
+# Kericho Gold — Premium E-commerce Platform
 
-Nevro-Shop v2 to nowoczesna, wysokowydajna platforma e-commerce zbudowana na fundamencie **Laravel 11**, **Livewire 3** oraz **TailwindCSS**. System został zaprojektowany z myślą o maksymalnej konwersji, optymalizacji SEO oraz gotowości na erę AI.
+Kericho Gold to nowoczesna, wysokowydajna platforma e-commerce zbudowana na fundamencie **Laravel 11**, **Livewire 3** oraz **TailwindCSS**. System został zaprojektowany z myślą o maksymalnej konwersji, optymalizacji SEO oraz gotowości na erę AI.
 
 ## 🚀 Kluczowe Funkcje Premium
 
@@ -46,4 +46,4 @@ Jeśli właśnie zakupiłeś sklep, otwórz plik **[Poradnik_wdrozeniowy.md](Por
 Szczegółowa dokumentacja techniczna: [docs/dokumentacja_techniczna.md](docs/dokumentacja_techniczna.md).
 
 ---
-© 2026 Nevro-Shop. Platforma zoptymalizowana przez Antigravity AI.
+© 2026 Kericho Gold Polska. Platforma zoptymalizowana przez Antigravity AI.

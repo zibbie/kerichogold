@@ -1,8 +1,8 @@
 # Dokumentacja Konfiguracji Serwera VPS — Klonowanie Środowiska (Debian 13)
 
 Ten dokument stanowi kompletny przewodnik konfiguracyjny serwera VPS dla dwóch nowych instancji sklepu **Kericho Gold**:
-1.  **sklep.kerichogold.pl** (Środowisko Produkcyjne)
-2.  **sklep2.kerichogold.pl** (Środowisko Stagingowe)
+1.  **sklep.kerichogold.com.pl** (Środowisko Produkcyjne)
+2.  **sklep2.kerichogold.com.pl** (Środowisko Stagingowe)
 
 Konfiguracja bazuje na sprawdzonych rozwiązaniach z serwera Nevro-Shop (`212.227.75.28`), dostosowanych do systemu **Debian 13 (Trixie)**.
 
@@ -347,7 +347,7 @@ docker exec -it kericho-db psql -U kericho -c "CREATE DATABASE kericho_staging;"
 APP_NAME="Kericho Gold Shop"
 APP_ENV=production
 APP_DEBUG=false
-APP_URL=https://sklep.kerichogold.pl
+APP_URL=https://sklep.kerichogold.com.pl
 
 DB_CONNECTION=pgsql
 DB_HOST=db
@@ -372,7 +372,7 @@ MEILISEARCH_KEY=TWÓJ_MASTER_KEY
 APP_NAME="Kericho Gold Shop [Staging]"
 APP_ENV=local
 APP_DEBUG=true
-APP_URL=https://sklep2.kerichogold.pl
+APP_URL=https://sklep2.kerichogold.com.pl
 
 DB_CONNECTION=pgsql
 DB_HOST=db
@@ -402,9 +402,9 @@ ROBOTS_NOINDEX=true
 Po uruchomieniu kontenerów wejdź do panelu NPM pod adresem: `http://IP_SERWERA:81`
 Zmień domyślne dane logowania (admin@example.com / changeme).
 
-### Konfiguracja domeny produkcyjnej (`sklep.kerichogold.pl`):
+### Konfiguracja domeny produkcyjnej (`sklep.kerichogold.com.pl`):
 1.  Kliknij **Add Proxy Host**.
-2.  **Domain Names:** `sklep.kerichogold.pl`
+2.  **Domain Names:** `sklep.kerichogold.com.pl`
 3.  **Scheme:** `http`
 4.  **Forward Name/IP:** `kericho-web` (nazwa usługi/kontenera w sieci Docker)
 5.  **Forward Port:** `80`
@@ -414,9 +414,9 @@ Zmień domyślne dane logowania (admin@example.com / changeme).
     *   Zaznacz: *Force SSL*, *HTTP/2 Support*.
     *   Zaakceptuj warunki i kliknij **Save**.
 
-### Konfiguracja domeny stagingowej (`sklep2.kerichogold.pl`):
+### Konfiguracja domeny stagingowej (`sklep2.kerichogold.com.pl`):
 1.  Kliknij **Add Proxy Host**.
-2.  **Domain Names:** `sklep2.kerichogold.pl`
+2.  **Domain Names:** `sklep2.kerichogold.com.pl`
 3.  **Scheme:** `http`
 4.  **Forward Name/IP:** `kericho-staging-web` (nazwa usługi/kontenera w sieci Docker)
 5.  **Forward Port:** `80`

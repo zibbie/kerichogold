@@ -16,7 +16,7 @@ class SeoService
             '@context' => 'https://schema.org',
             '@type' => 'Organization',
             '@id' => url('/') . '#organization',
-            'name' => 'Nevro-Shop',
+            'name' => 'Kericho Gold',
             'url' => url('/'),
             'logo' => [
                 '@type' => 'ImageObject',
@@ -24,7 +24,7 @@ class SeoService
             ],
             'contactPoint' => [
                 '@type' => 'ContactPoint',
-                'email' => 'kontakt@nevro.pl',
+                'email' => 'kontakt@kerichogold.pl',
                 'contactType' => 'customer service',
                 'availableLanguage' => 'Polish',
             ],
@@ -41,7 +41,7 @@ class SeoService
             '@context' => 'https://schema.org',
             '@type' => 'WebSite',
             '@id' => url('/') . '#website',
-            'name' => 'Nevro-Shop',
+            'name' => 'Kericho Gold',
             'url' => url('/'),
             'publisher' => [
                 '@id' => url('/') . '#organization',
@@ -73,7 +73,7 @@ class SeoService
             'image' => $product->main_image_url,
             'brand' => [
                 '@type' => 'Brand',
-                'name' => $product->brand ?: 'Nevro',
+                'name' => $product->brand ?: 'Kericho Gold',
             ],
             'offers' => [
                 '@type' => 'Offer',

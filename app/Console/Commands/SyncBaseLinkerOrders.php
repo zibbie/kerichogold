@@ -13,7 +13,7 @@ class SyncBaseLinkerOrders extends Command
                             {--since= : Unix timestamp to sync from (default: last sync time)}
                             {--force : Force full sync from 24h ago}';
 
-    protected $description = 'Synchronize order statuses from BaseLinker back to Nevro-Shop';
+    protected $description = 'Synchronize order statuses from BaseLinker back to Kericho Gold';
 
     protected const CACHE_KEY = 'baselinker_last_order_sync';
 

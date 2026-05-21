@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    @if(request()->getHost() === 'shop.nevro-wm.pl')
+    @if(request()->getHost() === 'sklep2.kerichogold.com.pl')
     <meta name="robots" content="noindex, nofollow">
     @endif
 
@@ -47,8 +47,8 @@
     </script>
     @endif
 
-    <title>{{ $title ?? 'Nevro-Shop — Zbiorniki IBC i akcesoria ogrodowe' }}</title>
-    <meta name="description" content="@yield('seo_description', 'Nevro-Shop — Twój zaufany dostawca rozwiązań dla zbiorników IBC i akcesoriów ogrodowych. Sprawdź naszą ofertę!')">
+    <title>{{ $title ?? 'Kericho Gold — Najlepsza kenijska herbata' }}</title>
+    <meta name="description" content="@yield('seo_description', 'Kericho Gold — Najwyższej jakości kenijska herbata czarna, zielona i ziołowa. Sprawdź naszą ofertę!')">
     <!-- AI Discovery & WebMCP -->
     <link rel="mcp" type="application/json" href="{{ url('/api/mcp') }}">
     <link rel="ai-discovery" type="text/plain" href="{{ url('/ai.txt') }}">
@@ -70,11 +70,11 @@
     <meta name="webmcp-endpoint" content="/api/mcp">
 
     <!-- Open Graph -->
-    <meta property="og:site_name" content="Nevro-Shop">
+    <meta property="og:site_name" content="Kericho Gold">
     <meta property="og:locale" content="pl_PL">
     <meta property="og:type" content="@yield('og_type', 'website')">
     <meta property="og:title" content="@yield('seo_title', config('app.name'))">
-    <meta property="og:description" content="@yield('seo_description', 'Nevro-Shop — zbiorniki IBC i akcesoria ogrodowe')">
+    <meta property="og:description" content="@yield('seo_description', 'Kericho Gold — najwyższej jakości kenijska herbata')">
     @hasSection('og_image')
     <meta property="og:image" content="@yield('og_image')">
     @endif
@@ -150,7 +150,7 @@
 
                 <div class="flex items-center flex-shrink-0 mr-8">
                     <a href="/" class="flex items-center">
-                        <img src="/images/logo.png" alt="Nevro-Shop" width="180" height="48" class="h-10 md:h-12 w-auto transition-all">
+                        <img src="/images/logo.png" alt="Kericho Gold" width="180" height="48" class="h-10 md:h-12 w-auto transition-all">
                     </a>
                 </div>
                 
@@ -265,7 +265,7 @@
         <div class="container-custom py-16">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
                 <div class="col-span-1 md:col-span-2">
-                    <h3 class="text-2xl font-heading font-bold text-sage-600 italic mb-6">Nevro-Shop</h3>
+                    <h3 class="text-2xl font-heading font-bold text-sage-600 italic mb-6">Kericho Gold</h3>
                     <p class="text-charcoal-900/80 max-w-sm leading-relaxed">
                         {!! nl2br(e($footer_description)) !!}
                     </p>

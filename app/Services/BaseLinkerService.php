@@ -91,7 +91,7 @@ class BaseLinkerService
     // ──────────────────────────────────────────────
 
     /**
-     * Push a Nevro-Shop order to BaseLinker order manager.
+     * Push a Kericho Gold order to BaseLinker order manager.
      * Idempotent: skips if order already has a baselinker_id.
      *
      * @return int BaseLinker order ID
@@ -129,7 +129,7 @@ class BaseLinkerService
             'phone'              => $order->phone ?? '',
             'email'              => $order->email,
             'user_comments'      => '',
-            'admin_comments'     => "Zamówienie z Nevro-Shop: {$order->order_number}",
+            'admin_comments'     => "Zamówienie z Kericho Gold: {$order->order_number}",
             'delivery_fullname'  => $shipping['name'] ?? $order->name,
             'delivery_address'   => $shipping['address'] ?? '',
             'delivery_city'      => $shipping['city'] ?? $order->city,
@@ -153,7 +153,7 @@ class BaseLinkerService
     }
 
     /**
-     * Update order status in BaseLinker when it changes in Nevro.
+     * Update order status in BaseLinker when it changes in Kericho Gold.
      */
     public function updateOrderStatus(Order $order): void
     {
@@ -170,7 +170,7 @@ class BaseLinkerService
     }
 
     /**
-     * Fetch recently changed orders from BaseLinker and sync statuses back to Nevro.
+     * Fetch recently changed orders from BaseLinker and sync statuses back to Kericho Gold.
      * Used by the scheduler (bl:sync-orders command).
      *
      * @return int Number of orders updated
@@ -190,14 +190,14 @@ class BaseLinkerService
                 continue;
             }
 
-            $nevroStatus = $this->mapStatusFromBaseLinker($blOrder['order_status_id']);
-            if ($nevroStatus && $nevroStatus !== $order->status) {
-                $order->transitionTo($nevroStatus);
+            $localStatus = $this->mapStatusFromBaseLinker($blOrder['order_status_id']);
+            if ($localStatus && $localStatus !== $order->status) {
+                $order->transitionTo($localStatus);
                 $order->baselinker_status = (string) $blOrder['order_status_id'];
                 $order->save();
                 $updated++;
 
-                Log::info("BaseLinker sync: Order #{$order->order_number} status → '{$nevroStatus}'");
+                Log::info("BaseLinker sync: Order #{$order->order_number} status → '{$localStatus}'");
             }
         }
 
@@ -227,7 +227,7 @@ class BaseLinkerService
             'text_fields'  => [
                 'name'             => $product->name,
                 'description'      => strip_tags($product->description ?? ''),
-                'description_extra1' => $product->brand ?? 'Nevro',
+                'description_extra1' => $product->brand ?? 'Kericho Gold',
             ],
             'prices' => [
                 // Default price group ID = 1 (klient skonfiguruje w BL)
@@ -249,7 +249,7 @@ class BaseLinkerService
     }
 
     /**
-     * Sync stock levels FROM BaseLinker TO Nevro (BL is master for stock).
+     * Sync stock levels FROM BaseLinker TO Kericho Gold (BL is master for stock).
      *
      * @return int Number of products updated
      */
@@ -284,7 +284,7 @@ class BaseLinkerService
     }
 
     /**
-     * Push current Nevro stock to BaseLinker after a sale.
+     * Push current Kericho Gold stock to BaseLinker after a sale.
      */
     public function pushStockUpdate(Product $product): void
     {
@@ -382,16 +382,16 @@ class BaseLinkerService
     // ──────────────────────────────────────────────
 
     /**
-     * Map Nevro order status to BaseLinker status ID.
+     * Map Kericho Gold order status to BaseLinker status ID.
      */
-    protected function mapStatusToBaseLinker(string $nevroStatus): int
+    protected function mapStatusToBaseLinker(string $localStatus): int
     {
         $map = config('services.baselinker.status_map', []);
-        return (int) ($map[$nevroStatus] ?? 0);
+        return (int) ($map[$localStatus] ?? 0);
     }
 
     /**
-     * Map BaseLinker status ID back to Nevro order status.
+     * Map BaseLinker status ID back to Kericho Gold order status.
      * Returns null if no mapping found.
      */
     protected function mapStatusFromBaseLinker(int $blStatusId): ?string

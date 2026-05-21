@@ -114,7 +114,7 @@ class Checkout extends Component
                 'items' => collect($summary['items'])->map(fn($item) => [
                     'item_id' => (string) $item['product_id'],
                     'item_name' => $item['product_name'],
-                    'item_brand' => 'Nevro',
+                    'item_brand' => 'Kericho Gold',
                     'price' => (float) $item['price'],
                     'quantity' => $item['quantity'],
                 ])->toArray(),
@@ -264,7 +264,7 @@ class Checkout extends Component
             
             // Send Admin Notification immediately for all orders (even if unpaid yet)
             try {
-                $adminEmails = \App\Models\Setting::get('admin_emails', 'info@nevro-wm.pl');
+                $adminEmails = \App\Models\Setting::get('admin_emails', 'kontakt@kerichogold.pl');
                 $emails = array_map('trim', explode(',', $adminEmails));
                 
                 \Illuminate\Support\Facades\Mail::to($emails)

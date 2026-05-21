@@ -11,10 +11,10 @@
                 
                 <div class="relative z-10 max-w-2xl">
                     <h1 class="text-3xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">
-                        Zadbaj o swój ogród <br> z Nevro-Shop
+                        Prawdziwa kenijska herbata <br> w Kericho Gold
                     </h1>
                     <p class="text-base md:text-lg text-white/80 mb-8 max-w-lg leading-relaxed">
-                        Odkryj naszą ofertę zbiorników IBC i akcesoriów ogrodowych.
+                        Odkryj naszą ofertę najwyższej jakości herbat czarnych, zielonych i ziołowych.
                     </p>
                     <div class="flex flex-wrap gap-4">
                         <a href="{{ route('shop') }}" class="inline-flex items-center gap-2 bg-sage-600 text-white px-6 py-3 rounded-xl font-heading font-bold hover:bg-sage-700 transition-all shadow-md group">

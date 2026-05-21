@@ -61,7 +61,7 @@ class Przelewy24Service
             'language' => 'pl',
             'urlReturn' => $baseUrl . '/payment/status/' . $order->id,
             'urlStatus' => (config('services.przelewy24.env') === 'sandbox')
-                ? 'https://nevro-wm.pl/api/payment/webhook'
+                ? 'https://sklep2.kerichogold.com.pl/api/payment/webhook'
                 : $baseUrl . '/api/payment/webhook',
         ];
 
@@ -85,7 +85,7 @@ class Przelewy24Service
             
             $response = Http::withBasicAuth($this->merchantId, $this->apiKey)
                 ->withHeaders([
-                    'Referer' => 'https://nevro-wm.pl',
+                    'Referer' => config('app.url'),
                     'Accept' => 'application/json',
                 ])
                 ->post($this->apiUrl . 'transaction/register', $data);
@@ -246,7 +246,7 @@ class Przelewy24Service
                         
                         // Queue order confirmation emails and analytics
                         try {
-                            $adminEmails = \App\Models\Setting::get('admin_emails', 'info@nevro-wm.pl');
+                            $adminEmails = \App\Models\Setting::get('admin_emails', 'kontakt@kerichogold.pl');
                             $emails = array_map('trim', explode(',', $adminEmails));
 
                             \Illuminate\Support\Facades\Mail::to($order->email)

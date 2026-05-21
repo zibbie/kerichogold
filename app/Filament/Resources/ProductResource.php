@@ -87,7 +87,7 @@ class ProductResource extends Resource
                             ->helperText('Kod kreskowy produktu (EAN)'),
                         Forms\Components\TextInput::make('brand')
                             ->label('Marka')
-                            ->default('Nevro'),
+                            ->default('Kericho Gold'),
                         Forms\Components\Select::make('category_id')
                             ->label('Kategoria')
                             ->relationship('category', 'name')

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'nevro-shop-v2-cache-v10';
+const CACHE_NAME = 'kericho-gold-cache-v1';
 const OFFLINE_URL = '/offline';
 
 const ASSETS_TO_CACHE = [

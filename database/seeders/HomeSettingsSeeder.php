@@ -17,12 +17,12 @@ class HomeSettingsSeeder extends Seeder
             ],
             [
                 'key' => 'hero_title',
-                'value' => 'Zadbaj o swój ogród z Nevro-Shop',
+                'value' => 'Prawdziwa kenijska herbata w Kericho Gold',
                 'type' => 'string',
             ],
             [
                 'key' => 'hero_description',
-                'value' => 'Odkryj naszą ofertę zbiorników IBC i akcesoriów ogrodowych, które sprawią, że Twoja praca w ogrodzie stanie się przyjemnością.',
+                'value' => 'Odkryj naszą ofertę najwyższej jakości herbat czarnych, zielonych i ziołowych, sprowadzanych prosto z Kenii.',
                 'type' => 'string',
             ],
             [

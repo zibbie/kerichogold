@@ -1,6 +1,6 @@
 <div class="flex flex-col gap-4 md:gap-12 pt-0 md:pt-8 pb-8 min-w-0 overflow-x-hidden" wire:key="product-listing-{{ $mode }}">
     @section('seo_title', $title)
-    @section('seo_description', 'Przeglądaj naszą ofertę: ' . $title . '. Najlepszej jakości zbiorniki IBC i akcesoria ogrodowe.')
+    @section('seo_description', 'Przeglądaj naszą ofertę: ' . $title . '. Najwyższej jakości ekskluzywne herbaty Kericho Gold oraz akcesoria.')
     
     <x-mobile-categories />
 
@@ -76,7 +76,7 @@
                     {
                         item_id: '{{ $product->id }}',
                         item_name: '{{ addslashes($product->name) }}',
-                        item_brand: 'Nevro',
+                        item_brand: 'Kericho Gold',
                         price: {{ $product->price }},
                         index: {{ $loop->index + 1 }}
                     }{{ !$loop->last ? ',' : '' }}

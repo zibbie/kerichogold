@@ -330,7 +330,7 @@ class TpayPaymentService
     {
         // Send order confirmation email asynchronously
         try {
-            $adminEmails = \App\Models\Setting::get('admin_emails', 'info@nevro-wm.pl');
+            $adminEmails = \App\Models\Setting::get('admin_emails', 'kontakt@kerichogold.pl');
             $emails = array_map('trim', explode(',', $adminEmails));
 
             \Illuminate\Support\Facades\Mail::to($order->email)

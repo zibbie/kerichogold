@@ -5,7 +5,7 @@ Disallow: /payment/
 Disallow: /admin/
 Disallow: /livewire/
 
-Sitemap: https://nevro-wm.pl/sitemap.xml
+Sitemap: https://sklep.kerichogold.com.pl/sitemap.xml
 
 # AI Bot Governance
 User-agent: OAI-SearchBot

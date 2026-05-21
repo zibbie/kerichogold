@@ -48,7 +48,7 @@ class AnalyticsService
                     'item_name' => $item->name,
                     'price' => (float)$item->price,
                     'quantity' => (int)$item->quantity,
-                    'item_brand' => $product?->brand ?? 'Nevro',
+                    'item_brand' => $product?->brand ?? 'Kericho Gold',
                     'item_category' => $product?->category?->name ?? 'General',
                     'profit' => (float)$profit,
                 ];

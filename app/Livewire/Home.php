@@ -40,8 +40,8 @@ class Home extends Component
     {
         $settings = [
             'hero_is_visible' => Setting::get('hero_is_visible', true),
-            'hero_title' => Setting::get('hero_title', 'Zadbaj o swój ogród z Nevro-Shop'),
-            'hero_description' => Setting::get('hero_description', 'Odkryj naszą ofertę zbiorników IBC i akcesoriów ogrodowych.'),
+            'hero_title' => Setting::get('hero_title', 'Prawdziwa kenijska herbata w Kericho Gold'),
+            'hero_description' => Setting::get('hero_description', 'Odkryj naszą ofertę najwyższej jakości herbat czarnych, zielonych i ziołowych.'),
             'hero_button_text' => Setting::get('hero_button_text', 'Odkryj ofertę'),
             'hero_button_link' => Setting::get('hero_button_link', '/sklep'),
             'hero_image_url' => Setting::get('hero_image_url'),
@@ -62,8 +62,8 @@ class Home extends Component
         return view('livewire.home', [
             'hero' => [
                 'visible' => false,
-                'title' => $settings['hero_title'] ?? 'Zadbaj o swój ogród z Nevro-Shop',
-                'description' => $settings['hero_description'] ?? 'Odkryj naszą ofertę zbiorników IBC i akcesoriów ogrodowych.',
+                'title' => $settings['hero_title'] ?? 'Prawdziwa kenijska herbata w Kericho Gold',
+                'description' => $settings['hero_description'] ?? 'Odkryj naszą ofertę najwyższej jakości herbat czarnych, zielonych i ziołowych.',
                 'button_text' => $settings['hero_button_text'] ?? 'Odkryj ofertę',
                 'button_link' => $settings['hero_button_link'] ?? '/sklep',
                 'image' => $settings['hero_image_url'] ?? 'https://lh3.googleusercontent.com/aida-public/AB6AXuDgWv9KS-hPHuh5egM4qGzxabvc2h-ZWLigFvYfrWcNrK8XDsnIbSOWz_eO4lt-b_Z5s3lve5lvXFvTbC6qvOhDEnG3yrIPRFW6c5z7vT7Uw56zntVR55YfQNcQIIJOSjSD9OaWf_ugwHkMdVNQX4-wMVbL0s5MYa0V66dTxN2NuqnbwciyGL7CUSm900B6uhFjPb6wMo1vJxTfGvJDwU5kp-8c9Y05RnrycXz65ECe_rupN0xUvGe9S8lDrpOxyt7oyU181v03iH06',

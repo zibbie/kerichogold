@@ -58,7 +58,7 @@ class GoogleFeedController extends Controller
                     echo '      <g:google_product_category>' . htmlspecialchars($googleCategory) . '</g:google_product_category>' . "\n";
                 }
                 
-                echo '      <g:brand>' . htmlspecialchars($product->brand ?: 'Nevro') . '</g:brand>' . "\n";
+                echo '      <g:brand>' . htmlspecialchars($product->brand ?: 'Kericho Gold') . '</g:brand>' . "\n";
                 if ($product->gtin) {
                     echo '      <g:gtin>' . htmlspecialchars($product->gtin) . '</g:gtin>' . "\n";
                     echo '      <g:identifier_exists>yes</g:identifier_exists>' . "\n";

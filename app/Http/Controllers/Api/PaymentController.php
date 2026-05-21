@@ -63,7 +63,7 @@ class PaymentController extends Controller
             if (!$orderExists) {
                 Log::info('P24 Webhook: Order not found in production. Forwarding to staging.', ['sessionId' => $sessionId]);
                 try {
-                    $response = Http::post('https://shop.nevro-wm.pl/api/payment/webhook', $request->all());
+                    $response = Http::post('https://sklep2.kerichogold.com.pl/api/payment/webhook', $request->all());
                     
                     Log::info('P24 Webhook: Forwarded to staging response', [
                         'status' => $response->status(),
@@ -104,7 +104,7 @@ class PaymentController extends Controller
 
                 // Send confirmation email to Customer & Admin asynchronously
                 try {
-                    $adminEmails = \App\Models\Setting::get('admin_emails', 'info@nevro-wm.pl');
+                    $adminEmails = \App\Models\Setting::get('admin_emails', 'kontakt@kerichogold.pl');
                     $emails = array_map('trim', explode(',', $adminEmails));
 
                     \Illuminate\Support\Facades\Mail::to($order->email)

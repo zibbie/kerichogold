@@ -85,7 +85,7 @@ class Product extends Model
      */
     public function getSeoTitleAttribute(): string
     {
-        return $this->meta_title ?: $this->name . ' | Nevro-Shop';
+        return $this->meta_title ?: $this->name . ' | Kericho Gold';
     }
 
     /**
@@ -99,7 +99,7 @@ class Product extends Model
 
         $desc = strip_tags($this->description);
         if (empty($desc)) {
-            $desc = "Kup {$this->name} w Nevro-Shop. Najlepsze akcesoria IBC i osprzęt ogrodowy. Szybka wysyłka i gwarancja jakości.";
+            $desc = "Kup {$this->name} w Kericho Gold. Najwyższej jakości kenijska herbata czarna, zielona i ziołowa. Szybka wysyłka.";
         }
 
         return Str::limit($desc, 160);

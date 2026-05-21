@@ -43,6 +43,6 @@ class CategoryDetail extends Component
             'categories' => $categories
         ])
         ->layout('layouts.app')
-        ->title($this->category->meta_title ?: $this->category->name . ' | Nevro-Shop');
+        ->title($this->category->meta_title ?: $this->category->name . ' | Kericho Gold');
     }
 }

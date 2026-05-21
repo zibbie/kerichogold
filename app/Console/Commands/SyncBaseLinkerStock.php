@@ -10,7 +10,7 @@ class SyncBaseLinkerStock extends Command
 {
     protected $signature = 'bl:sync-stock';
 
-    protected $description = 'Synchronize product stock quantities from BaseLinker back to Nevro-Shop';
+    protected $description = 'Synchronize product stock quantities from BaseLinker back to Kericho Gold';
 
     public function handle(BaseLinkerService $bl): int
     {

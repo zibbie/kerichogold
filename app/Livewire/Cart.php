@@ -26,7 +26,7 @@ class Cart extends Component
                 'items' => collect($summary['items'])->map(fn($item) => [
                     'item_id' => (string) $item['product_id'],
                     'item_name' => $item['product_name'],
-                    'item_brand' => 'Nevro',
+                    'item_brand' => 'Kericho Gold',
                     'price' => (float) $item['price'],
                     'quantity' => $item['quantity'],
                 ])->toArray(),

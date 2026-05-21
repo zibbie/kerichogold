@@ -30,7 +30,7 @@ class AdminOrderNotificationMail extends Mailable implements ShouldQueue
     {
         $order = \App\Models\Order::findOrFail($this->orderId);
         return new Envelope(
-            subject: 'Nowe zamówienie #' . $order->order_number . ' | NEVRO Shop',
+            subject: 'Nowe zamówienie #' . $order->order_number . ' | Kericho Gold',
         );
     }
 

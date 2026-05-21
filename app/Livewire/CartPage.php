@@ -87,6 +87,6 @@ class CartPage extends Component
     {
         return view('livewire.cart-page', [
             'cart' => $cartService->getCartSummary()
-        ])->layout('layouts.app')->title('Twój Koszyk - Nevro-Shop');
+        ])->layout('layouts.app')->title('Twój Koszyk - Kericho Gold');
     }
 }

@@ -24,7 +24,7 @@ class GeneralSettings extends Page
     {
         $this->data = [
             'cod_fee' => Setting::get('cod_fee', 10.00),
-            'admin_emails' => Setting::get('admin_emails', 'info@nevro-wm.pl'),
+            'admin_emails' => Setting::get('admin_emails', 'kontakt@kerichogold.pl'),
             'paypo_enabled' => Setting::get('paypo_enabled', true),
         ];
         $this->form->fill($this->data);
@@ -49,7 +49,7 @@ class GeneralSettings extends Page
                     ->schema([
                         TextInput::make('admin_emails')
                             ->label('Adresy e-mail administratorów')
-                            ->helperText('Oddzielaj adresy przecinkami (np. info@nevro-wm.pl, biuro@nevro-wm.pl)')
+                            ->helperText('Oddzielaj adresy przecinkami (np. kontakt@kerichogold.pl, magdalena@kerichogold.pl)')
                             ->required(),
                     ]),
             ])

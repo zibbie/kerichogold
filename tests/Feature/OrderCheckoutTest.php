@@ -42,7 +42,7 @@ class OrderCheckoutTest extends TestCase
         $cartService = app(CartService::class);
         $cartService->addProduct($product->id, 1);
 
-        \App\Models\Setting::set('admin_emails', 'info@nevro-wm.pl,biuro@nevro-wm.pl');
+        \App\Models\Setting::set('admin_emails', 'kontakt@kerichogold.pl,magdalena@kerichogold.pl');
 
         // 3. Test komponentu Checkout
         Livewire::test(Checkout::class)
@@ -66,7 +66,7 @@ class OrderCheckoutTest extends TestCase
         // 5. Weryfikacja maili
         Mail::assertQueued(OrderConfirmationMail::class);
         Mail::assertQueued(AdminOrderNotificationMail::class, function ($mail) {
-            return $mail->hasTo('info@nevro-wm.pl') && $mail->hasTo('biuro@nevro-wm.pl');
+            return $mail->hasTo('kontakt@kerichogold.pl') && $mail->hasTo('magdalena@kerichogold.pl');
         });
         
         // Sprzątanie po teście

@@ -39,7 +39,7 @@ class UserResource extends Resource
                             ->required()
                             ->unique(ignoreRecord: true)
                             ->maxLength(255)
-                            ->helperText('Użyj adresu w domenie @admin.com lub @nevro-wm.pl, aby nadać dostęp do panelu.'),
+                            ->helperText('Użyj adresu w domenie @admin.com lub @kerichogold.pl, aby nadać dostęp do panelu.'),
                         Forms\Components\TextInput::make('password')
                             ->label('Nowe hasło')
                             ->password()

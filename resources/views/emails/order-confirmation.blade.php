@@ -1,7 +1,7 @@
 <x-mail::message>
 # Szanowny Panie/Pani {{ $order->name }}
 
-Dziękujemy za dokonanie zakupów w naszym sklepie internetowym **Sklep NEVRO**. Twoje zamówienie zostało złożone.
+Dziękujemy za dokonanie zakupów w naszym sklepie internetowym **Kericho Gold**. Twoje zamówienie zostało złożone.
 
 **Numer zamówienia:** {{ $order->order_number }}  
 **Data zamówienia:** {{ $order->created_at->format('d.m.Y H:i') }}  
@@ -41,11 +41,11 @@ Treść maila stanowi potwierdzenie, że sklep otrzymał złożone przez Panią/
 **UWAGA:** Ten adres został podany przez osobę dokonującą zakupów w naszym sklepie. Jeżeli to nie Ty podałeś ten adres prosimy o pilny kontakt z nami w celu anulowania transakcji. Jeśli zaś wszystkie dane transakcji się zgadzają, serdecznie dziękujemy Ci za dokonanie zakupów w naszym sklepie internetowym.
 
 Z poważaniem,  
-**NEVRO**  
-Wiktoria Mącznik  
-Żydowska 17/264, 05-825 Grodzisk Mazowiecki  
-Adres email: info@nevro-wm.pl  
-NIP: 5291859792  
-ING Bank Śląski: 29 1050 1924 1000 0090 8480 3585
+**Kericho Gold Polska**  
+Trans-Tok Logistic Group Sp. z o.o.  
+ul. Sławęcińska 14, Macierzysz, 05-850 Ożarów Mazowiecki  
+Adres email: kontakt@kerichogold.pl  
+NIP: 1182104012  
+Konto bankowe: [PROSZĘ UZUPEŁNIĆ NUMER KONTA BANKOWEGO]
 
 </x-mail::message>

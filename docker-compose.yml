@@ -6,7 +6,7 @@ services:
       dockerfile: docker/app.Dockerfile
     volumes:
       - .:/var/www/html
-      - /Volumes/Third/Users/zbyszek/nevro-wm:/var/www/nevro-wm
+      - /Volumes/Third/Users/zbyszek/kerichogold:/var/www/kerichogold
     environment:
       - APP_ENV=local
       - APP_DEBUG=true
@@ -76,8 +76,8 @@ services:
     container_name: v2-db
     image: postgres:15-alpine
     environment:
-      - POSTGRES_DB=${DB_DATABASE:-nevro_v2}
-      - POSTGRES_USER=${DB_USERNAME:-nevro}
+      - POSTGRES_DB=${DB_DATABASE:-kericho_v2}
+      - POSTGRES_USER=${DB_USERNAME:-kericho}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
     volumes:
       - v2-db-data:/var/lib/postgresql/data

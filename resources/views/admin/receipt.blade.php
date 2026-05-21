@@ -90,17 +90,17 @@
 
     <div class="container">
         <div class="header">
-            <h1>NEVRO-SHOP</h1>
+            <h1>KERICHO GOLD</h1>
             <p>Potwierdzenie Zamówienia (Paragon)</p>
         </div>
 
         <div class="info-grid">
             <div class="info-block">
                 <h3>Sprzedawca</h3>
-                <p><strong>Nevro-Shop Sp. z o.o.</strong><br>
-                ul. Przykładowa 123<br>
-                00-001 Warszawa<br>
-                NIP: 123-456-78-90</p>
+                <p><strong>Trans-Tok Logistic Group Sp. z o.o.</strong><br>
+                ul. Sławęcińska 14, Macierzysz<br>
+                05-850 Ożarów Mazowiecki<br>
+                NIP: 1182104012, KRS: 0000547164</p>
             </div>
             <div class="info-block" style="text-align: right;">
                 <h3>Zamówienie</h3>
@@ -161,7 +161,7 @@
         </div>
 
         <div class="footer">
-            <p>Dziękujemy za zakupy w Nevro-Shop!<br>
+            <p>Dziękujemy za zakupy w Kericho Gold!<br>
             To jest dokument niefiskalny generowany automatycznie.</p>
         </div>
     </div>

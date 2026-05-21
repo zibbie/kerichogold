@@ -1,5 +1,5 @@
-@section('seo_title', $category->name . ' - Nevro-Shop')
-@section('seo_description', $category->description_short ?? 'Przeglądaj kategorię ' . $category->name . ' w Nevro-Shop.')
+@section('seo_title', $category->name . ' - Kericho Gold')
+@section('seo_description', $category->description_short ?? 'Przeglądaj kategorię ' . $category->name . ' w sklepie Kericho Gold.')
 <div class="flex flex-col gap-4 md:gap-12 pt-0 md:pt-8 pb-8 min-w-0 overflow-x-hidden">
     <x-mobile-categories :activeCategoryId="$category->id" />
 

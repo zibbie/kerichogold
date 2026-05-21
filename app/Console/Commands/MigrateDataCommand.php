@@ -133,7 +133,7 @@ class MigrateDataCommand extends Command
         // Run photo migration
         $this->info('Running photo migration...');
         $this->call('photos:migrate', [
-            '--source' => '/var/www/nevro-wm/images',
+            '--source' => '/var/www/kerichogold/images',
             '--chunk' => 1000
         ]);
 

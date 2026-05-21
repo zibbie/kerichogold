@@ -1,4 +1,4 @@
-# Nevro-Shop AI Context
+# Kericho Gold AI Context
 # This file provides context for AI agents (Claude, GPT, etc.)
 
 User-agent: *
@@ -15,7 +15,7 @@ Capability: get_product
 WebMCP-Endpoint: /api/mcp
 
 # Branding
-Brand-Name: Nevro-Shop
-Primary-Category: IBC Tanks and Garden Accessories
+Brand-Name: Kericho Gold
+Primary-Category: Premium Tea
 Market: Poland (PL)
 Currency: PLN

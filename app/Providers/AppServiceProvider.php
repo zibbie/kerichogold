@@ -31,13 +31,13 @@ class AppServiceProvider extends ServiceProvider
                 ], false));
 
             return (new MailMessage)
-                ->subject('Resetowanie hasła - Nevro Shop')
+                ->subject('Resetowanie hasła - Kericho Gold')
                 ->greeting('Witaj!')
                 ->line('Otrzymujesz tę wiadomość, ponieważ otrzymaliśmy prośbę o zresetowanie hasła dla Twojego konta.')
                 ->action('Resetuj hasło', $url)
                 ->line('Ten link do zresetowania hasła wygaśnie za 60 minut.')
                 ->line('Jeśli to nie Ty prosiłeś o zresetowanie hasła, nie musisz podejmować żadnych dalszych działań.')
-                ->salutation("Pozdrawiamy,\nZespół Nevro Shop");
+                ->salutation("Pozdrawiamy,\nZespół Kericho Gold");
         });
 
         // Set dynamic timezone from settings
@@ -68,10 +68,10 @@ class AppServiceProvider extends ServiceProvider
         \Illuminate\Support\Facades\View::share('google_ads_id', null);
         \Illuminate\Support\Facades\View::share('google_analytics_id', null);
         \Illuminate\Support\Facades\View::share('google_tag_manager_id', null);
-        \Illuminate\Support\Facades\View::share('footer_description', 'Twój zaufany dostawca rozwiązań dla zbiorników IBC i akcesoriów ogrodowych.');
-        \Illuminate\Support\Facades\View::share('footer_email', 'kontakt@nevro-wm.pl');
-        \Illuminate\Support\Facades\View::share('footer_phone', '+48 123 456 789');
-        \Illuminate\Support\Facades\View::share('footer_copyright', '© 2026 Nevro-Shop. Wyhodowano z miłością.');
+        \Illuminate\Support\Facades\View::share('footer_description', 'Najwyższej jakości herbaty czarne, zielone i ziołowe sprowadzane prosto z Kenii.');
+        \Illuminate\Support\Facades\View::share('footer_email', 'kontakt@kerichogold.pl');
+        \Illuminate\Support\Facades\View::share('footer_phone', '+48 575 023 900');
+        \Illuminate\Support\Facades\View::share('footer_copyright', '© 2026 Kericho Gold Polska. Wszelkie prawa zastrzeżone.');
         \Illuminate\Support\Facades\View::share('cookie_consent_active', true);
         \Illuminate\Support\Facades\View::share('cookie_consent_title', 'Zarządzaj zgodą na pliki cookie');
         \Illuminate\Support\Facades\View::share('cookie_consent_description', 'Używamy plików cookie, aby poprawić komfort przeglądania...');
@@ -100,10 +100,10 @@ class AppServiceProvider extends ServiceProvider
                 \Illuminate\Support\Facades\View::share('nav_categories', $globalData['nav_categories'] ?? collect());
                 
                 // Footer Settings
-                \Illuminate\Support\Facades\View::share('footer_description', $settings->get('footer_description', 'Twój zaufany dostawca rozwiązań dla zbiorników IBC i akcesoriów ogrodowych.'));
-                \Illuminate\Support\Facades\View::share('footer_email', $settings->get('footer_email', 'kontakt@nevro-wm.pl'));
-                \Illuminate\Support\Facades\View::share('footer_phone', $settings->get('footer_phone', '+48 123 456 789'));
-                \Illuminate\Support\Facades\View::share('footer_copyright', $settings->get('footer_copyright', '© 2026 Nevro-Shop. Wyhodowano z miłością.'));
+                \Illuminate\Support\Facades\View::share('footer_description', $settings->get('footer_description', 'Najwyższej jakości herbaty czarne, zielone i ziołowe sprowadzane prosto z Kenii.'));
+                \Illuminate\Support\Facades\View::share('footer_email', $settings->get('footer_email', 'kontakt@kerichogold.pl'));
+                \Illuminate\Support\Facades\View::share('footer_phone', $settings->get('footer_phone', '+48 575 023 900'));
+                \Illuminate\Support\Facades\View::share('footer_copyright', $settings->get('footer_copyright', '© 2026 Kericho Gold Polska. Wszelkie prawa zastrzeżone.'));
     
                 // Cookie Consent Settings
                 \Illuminate\Support\Facades\View::share('cookie_consent_active', (bool) $settings->get('cookie_consent_active', true));

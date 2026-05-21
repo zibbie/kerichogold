@@ -94,7 +94,7 @@
                 </div>
 
                 <div class="mb-4 text-sage-600 font-heading font-bold text-xs uppercase tracking-widest">
-                    {{ $product->category?->name ?? 'Nevro-Shop' }}
+                    {{ $product->category?->name ?? 'Kericho Gold' }}
                 </div>
                 
                 <h1 class="text-4xl md:text-5xl font-heading font-bold text-charcoal-900 mb-6 leading-tight">
@@ -238,7 +238,7 @@
                 items: [{
                     item_id: '{{ $product->id }}',
                     item_name: '{{ addslashes($product->name) }}',
-                    item_brand: 'Nevro',
+                    item_brand: 'Kericho Gold',
                     item_category: '{{ addslashes($product->category?->name ?? "") }}',
                     price: {{ $product->price }},
                     quantity: 1
@@ -258,7 +258,7 @@
                     items: [{
                         item_id: '{{ $product->id }}',
                         item_name: '{{ addslashes($product->name) }}',
-                        item_brand: 'Nevro',
+                        item_brand: 'Kericho Gold',
                         item_category: '{{ addslashes($product->category?->name ?? "") }}',
                         price: price,
                         quantity: qty
