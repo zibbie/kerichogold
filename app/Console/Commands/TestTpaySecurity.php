@@ -49,7 +49,9 @@ class TestTpaySecurity extends Command
         $mockSignature = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.mock_payload.mock_signature';
 
         $verifier = new TpayPaymentService();
-        $isValid = $verifier->verifySignature($testData, $mockSignature);
+        $reflector = new \ReflectionMethod(TpayPaymentService::class, 'verifySignature');
+        $reflector->setAccessible(true);
+        $isValid = $reflector->invoke($verifier, $testData, $mockSignature);
 
         if (!$isValid) {
             $this->info('✅ Signature verification correctly rejected invalid signature');
