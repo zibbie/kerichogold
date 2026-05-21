@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bloom &amp; Hearth - Mobile Catalog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e0e3df",
+                        "on-tertiary-fixed-variant": "#4c463a",
+                        "on-tertiary-container": "#3c372b",
+                        "surface-container-high": "#e6e9e4",
+                        "secondary": "#8e4d33",
+                        "surface-container": "#ecefea",
+                        "primary-container": "#8ba88e",
+                        "inverse-on-surface": "#eff2ed",
+                        "outline": "#737972",
+                        "on-primary-fixed-variant": "#334d38",
+                        "on-primary-container": "#233d29",
+                        "surface": "#f7faf5",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#71361e",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#feaa8a",
+                        "on-background": "#191c1a",
+                        "primary": "#4a654e",
+                        "inverse-surface": "#2d312e",
+                        "error": "#ba1a1a",
+                        "background": "#f7faf5",
+                        "surface-container-highest": "#e0e3df",
+                        "secondary-fixed-dim": "#ffb59a",
+                        "inverse-primary": "#b0ceb2",
+                        "tertiary": "#645e50",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f7faf5",
+                        "on-tertiary-fixed": "#1f1b11",
+                        "on-secondary-container": "#783c24",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#a8a091",
+                        "on-secondary-fixed": "#380d00",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#b0ceb2",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f1f4f0",
+                        "surface-dim": "#d8dbd6",
+                        "secondary-fixed": "#ffdbce",
+                        "on-surface": "#191c1a",
+                        "on-surface-variant": "#424842",
+                        "surface-tint": "#4a654e",
+                        "outline-variant": "#c2c8c0",
+                        "on-primary-fixed": "#07200f",
+                        "tertiary-fixed-dim": "#cec6b5",
+                        "tertiary-fixed": "#ebe2d0",
+                        "primary-fixed": "#cceace"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin": "32px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "container-max-width": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Be Vietnam Pro"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "label-sm": ["Be Vietnam Pro"],
+                        "body-sm": ["Be Vietnam Pro"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "label-md": ["Be Vietnam Pro"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h4": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h1": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "h4": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen flex flex-col">
+<!-- TopAppBar from JSON -->
+<header class="bg-[#F5F5F0] dark:bg-stone-900 font-['Plus_Jakarta_Sans'] tracking-tight border-b border-stone-200 dark:border-stone-800 shadow-sm shadow-stone-200/40 dark:shadow-none flex justify-between items-center w-full px-4 h-16 sticky top-0 z-50">
+<button class="text-[#8BA88E] dark:text-[#A3BBA5] hover:bg-stone-200/50 dark:hover:bg-stone-800 transition-colors active:scale-95 duration-150 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-xl font-bold text-stone-800 dark:text-stone-100">Bloom &amp; Hearth</h1>
+<button class="text-[#8BA88E] dark:text-[#A3BBA5] hover:bg-stone-200/50 dark:hover:bg-stone-800 transition-colors active:scale-95 duration-150 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-[container-max-width] mx-auto px-4 md:px-gutter pb-24 pt-4">
+<!-- Filter Chips -->
+<section class="mb-6 flex gap-3 overflow-x-auto scrollbar-hide py-1">
+<button class="whitespace-nowrap px-4 py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md transition-colors active:scale-95">All Plants</button>
+<button class="whitespace-nowrap px-4 py-2 bg-surface-container text-on-surface-variant rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors active:scale-95">Indoor</button>
+<button class="whitespace-nowrap px-4 py-2 bg-surface-container text-on-surface-variant rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors active:scale-95">Drought Tolerant</button>
+<button class="whitespace-nowrap px-4 py-2 bg-surface-container text-on-surface-variant rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors active:scale-95">Pet Friendly</button>
+<button class="whitespace-nowrap px-4 py-2 bg-surface-container text-on-surface-variant rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors active:scale-95">Ceramics</button>
+</section>
+<!-- Product Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-gutter">
+<!-- Product Card 1 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col relative border border-surface-variant/50">
+<div class="absolute top-2 left-2 bg-primary-container text-on-primary-container font-label-sm text-label-sm px-2 py-1 rounded-md z-10">Organic</div>
+<div class="aspect-square bg-surface-container relative w-full overflow-hidden">
+<img alt="Monstera Deliciosa in ceramic pot" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="A softly lit, high-quality photograph of a vibrant green Monstera Deliciosa plant potted in a matte, oatmeal-colored ceramic planter. The setting is a bright, minimal living room bathed in natural sunlight, casting gentle, warm shadows. The aesthetic perfectly embodies a modern, organic home style, highlighting earthy tones, soft sage greens, and a calming, functional atmosphere. The plant appears incredibly healthy and carefully tended." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhgpL5FmM-0hsGUSYXlBk619eQfzfmPH1PS9vMPo6BDUWb0nTcU1Ni9LYhvQD1PlGktKyrF8l7MhTaKr4EmqljG1jf6dVqCxPOnCSh6xp7zmA85K5rTH6MJ5jchYvz3hCvMuG4pO318GZ2WL69JHZg7Cb-BNgbroLRzyagnpqYeFn-hPd-hmstvPsuOsKk6TXDZQtCkqRwNpPX-IEa0wqYfk0F5iYP9Lz0kdPbrLtGDlvKTzwxiXAtLECqxiGzcLU0TSs6M8IUvOSG"/>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<h2 class="font-h4 text-h4 text-on-surface mb-1 leading-tight">Monstera Deliciosa</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3 flex-1">Medium floor plant</p>
+<div class="flex items-center justify-between mt-auto pt-2 border-t border-surface-container-highest">
+<span class="font-h3 text-h3 text-primary">$45</span>
+<button aria-label="Add to cart" class="bg-secondary text-on-secondary w-8 h-8 rounded-lg flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col relative border border-surface-variant/50">
+<div class="absolute top-2 left-2 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-2 py-1 rounded-md z-10">Bestseller</div>
+<div class="aspect-square bg-surface-container relative w-full overflow-hidden">
+<img alt="Snake Plant in terracotta pot" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="A clean, beautifully composed photograph of an architectural Snake Plant (Sansevieria) housed in a rustic, textured terracotta pot. The environment is styled with a light-adaptive, sustainable feel, featuring soft beige and muted green background elements. The lighting is bright but diffused, avoiding harsh contrast and emphasizing a grounded, welcoming personality. The overall visual language is tactile and approachable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4w_7htse5hQg5U9AisSwmVeqtWekA01ELbxUE2SoMuzGLYNb3SRA6fNIseYY-a6CtTvzUBH4b4l2c-z_TjM9JmucUVqs54Gb1kEXLOKVk6NKe8pxH8HlI5B3iRRR8Dk-RYUMxCvBZctHxTnJztMmAOTCugD0tkxeEqLhyzG36nOgHanKxGAhSE0KCF1g-TEZqmJp1zDNIh_r7-9IHS5Nf-xCRMFiqPoG0VH9EncRz-FHf3f27kfKxRdp39E6NZKbG2d_xfEwC2H0r"/>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<h2 class="font-h4 text-h4 text-on-surface mb-1 leading-tight">Snake Plant Laurentii</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3 flex-1">Low light tolerant</p>
+<div class="flex items-center justify-between mt-auto pt-2 border-t border-surface-container-highest">
+<span class="font-h3 text-h3 text-primary">$32</span>
+<button aria-label="Add to cart" class="bg-secondary text-on-secondary w-8 h-8 rounded-lg flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col relative border border-surface-variant/50">
+<div class="aspect-square bg-surface-container relative w-full overflow-hidden">
+<img alt="Fiddle Leaf Fig in basket" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="A stunning, inviting photograph of a tall, leafy Fiddle Leaf Fig tree standing in a woven, natural fiber basket. The scene is set in a comfortable, well-tended indoor garden corner with a soft, natural color palette dominated by sage greens and warm oatmeal hues. Ambient, soft light cascades across the large, textured leaves, highlighting the organic functionalism of the design. The mood is highly reliable and inspiring for plant parents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL2XFLBLui-80YLVKnllqCea5Vo0lOq2_Nu1XXK2IC1GgUHGQ6YS6L_IrHH5jWzjGHDgpV0QdpT9EOvWor1Bd5X8n44ImsRaT--8XCxnxrqsCJfCk_CJJI08ufPTwxrK_RO8YRTPGUrecNCFs0IjV6Kq6vtQyS7YPLFcqgR8_9fdOCPb6uijFaQLBSl0nv69o-wXrqXKo6jl-B0VAR7Aa4BhbhS2G0Jr1YSVTbUT7UGFNtPrBEDnVuWPA3f35jgZC7zQ_BcF0yyGCi"/>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<h2 class="font-h4 text-h4 text-on-surface mb-1 leading-tight">Fiddle Leaf Fig</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3 flex-1">Large statement plant</p>
+<div class="flex items-center justify-between mt-auto pt-2 border-t border-surface-container-highest">
+<span class="font-h3 text-h3 text-primary">$85</span>
+<button aria-label="Add to cart" class="bg-secondary text-on-secondary w-8 h-8 rounded-lg flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 4 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col relative border border-surface-variant/50">
+<div class="absolute top-2 left-2 bg-primary-container text-on-primary-container font-label-sm text-label-sm px-2 py-1 rounded-md z-10">Pet Friendly</div>
+<div class="aspect-square bg-surface-container relative w-full overflow-hidden">
+<img alt="Calathea Ornata" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="A close-up, beautifully textured photograph of a Calathea Ornata plant showing off its striking pink-striped leaves. The plant sits in a minimalist, soft sage green ceramic planter on a light wooden surface. The lighting is gentle and diffused, creating matte, ambient shadows that give depth without stark contrast. The visual composition is modern, breathable, and perfectly aligns with a sustainable, warm home aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtCMvRIAyY3JwsdZkomAOEC5q_cfK7FMuDePdGqTH1U1UeMXZUhRdEwChjmBcA97b7yKjimp29CxbnLWnYAwQqdxLUTvyGAIKGZHxadDav93gsDcZcEUEaa9FYgL4ITSJXTRASWnSmPYz_1uN9FGuHPBCAnm9_kbiSEvTcHPr2Qsoz17dkzRlt_mk7niZVZlvCve1ChzBLVmQSvLPaXkSSLQ2AiLzvpecieON4SIrwdWZIt8_gW5C811cewuYSL42CPDzmA34aCfUZ"/>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<h2 class="font-h4 text-h4 text-on-surface mb-1 leading-tight">Calathea Pinstripe</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3 flex-1">Bright indirect light</p>
+<div class="flex items-center justify-between mt-auto pt-2 border-t border-surface-container-highest">
+<span class="font-h3 text-h3 text-primary">$28</span>
+<button aria-label="Add to cart" class="bg-secondary text-on-secondary w-8 h-8 rounded-lg flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar from JSON (Categories is Active) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe pt-2 bg-white dark:bg-stone-950 rounded-t-xl border-t border-stone-100 dark:border-stone-800 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] md:hidden">
+<!-- Home (Inactive) -->
+<button class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 py-1 px-3 hover:text-[#8BA88E] dark:hover:text-[#A3BBA5] tap-highlight-transparent active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[11px] font-semibold font-['Plus_Jakarta_Sans'] mt-1">Home</span>
+</button>
+<!-- Categories (Active) -->
+<button class="flex flex-col items-center justify-center text-[#8BA88E] dark:text-[#A3BBA5] bg-[#8BA88E]/5 rounded-lg py-1 px-3 hover:text-[#8BA88E] dark:hover:text-[#A3BBA5] tap-highlight-transparent active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="grid_view" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="text-[11px] font-semibold font-['Plus_Jakarta_Sans'] mt-1">Categories</span>
+</button>
+<!-- Favorites (Inactive) -->
+<button class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 py-1 px-3 hover:text-[#8BA88E] dark:hover:text-[#A3BBA5] tap-highlight-transparent active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="text-[11px] font-semibold font-['Plus_Jakarta_Sans'] mt-1">Favorites</span>
+</button>
+<!-- Account (Inactive) -->
+<button class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 py-1 px-3 hover:text-[#8BA88E] dark:hover:text-[#A3BBA5] tap-highlight-transparent active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[11px] font-semibold font-['Plus_Jakarta_Sans'] mt-1">Account</span>
+</button>
+</nav>
+</body></html>

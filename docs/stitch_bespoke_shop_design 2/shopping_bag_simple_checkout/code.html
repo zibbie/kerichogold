@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Shopping Bag - Bloom &amp; Hearth</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e0e3df",
+                        "on-tertiary-fixed-variant": "#4c463a",
+                        "on-tertiary-container": "#3c372b",
+                        "surface-container-high": "#e6e9e4",
+                        "secondary": "#8e4d33",
+                        "surface-container": "#ecefea",
+                        "primary-container": "#8ba88e",
+                        "inverse-on-surface": "#eff2ed",
+                        "outline": "#737972",
+                        "on-primary-fixed-variant": "#334d38",
+                        "on-primary-container": "#233d29",
+                        "surface": "#f7faf5",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#71361e",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#feaa8a",
+                        "on-background": "#191c1a",
+                        "primary": "#4a654e",
+                        "inverse-surface": "#2d312e",
+                        "error": "#ba1a1a",
+                        "background": "#f7faf5",
+                        "surface-container-highest": "#e0e3df",
+                        "secondary-fixed-dim": "#ffb59a",
+                        "inverse-primary": "#b0ceb2",
+                        "tertiary": "#645e50",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f7faf5",
+                        "on-tertiary-fixed": "#1f1b11",
+                        "on-secondary-container": "#783c24",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#a8a091",
+                        "on-secondary-fixed": "#380d00",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#b0ceb2",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f1f4f0",
+                        "surface-dim": "#d8dbd6",
+                        "secondary-fixed": "#ffdbce",
+                        "on-surface": "#191c1a",
+                        "on-surface-variant": "#424842",
+                        "surface-tint": "#4a654e",
+                        "outline-variant": "#c2c8c0",
+                        "on-primary-fixed": "#07200f",
+                        "tertiary-fixed-dim": "#cec6b5",
+                        "tertiary-fixed": "#ebe2d0",
+                        "primary-fixed": "#cceace"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin": "32px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "container-max-width": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Be Vietnam Pro"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "label-sm": ["Be Vietnam Pro"],
+                        "body-sm": ["Be Vietnam Pro"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "label-md": ["Be Vietnam Pro"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h4": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h1": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "h4": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom, 16px); }
+        .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-4 h-16 sticky top-0 z-50 bg-[#F5F5F0] dark:bg-stone-900 border-b border-stone-200 dark:border-stone-800 shadow-sm shadow-stone-200/40 dark:shadow-none pt-safe">
+<button aria-label="Menu" class="w-10 h-10 flex items-center justify-center rounded-full text-[#8BA88E] dark:text-[#A3BBA5] hover:bg-stone-200/50 dark:hover:bg-stone-800 transition-colors active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<div class="text-xl font-bold text-stone-800 dark:text-stone-100 font-['Plus_Jakarta_Sans'] tracking-tight">Bloom &amp; Hearth</div>
+<div class="w-10 h-10"></div> <!-- Placeholder to balance flex-between -->
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-[container-max-width] mx-auto px-4 py-6 md:px-margin space-y-6 pb-32">
+<div class="flex items-center justify-between">
+<h1 class="font-h3 text-h3 text-on-background">Your Bag</h1>
+<span class="font-body-sm text-body-sm text-on-surface-variant">2 items</span>
+</div>
+<!-- Cart Items List -->
+<div class="space-y-4">
+<!-- Item 1 -->
+<div class="flex items-start gap-4 p-4 bg-surface-container-lowest rounded-xl shadow-sm border border-surface-variant/50">
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container flex items-center justify-center">
+<img alt="Monstera Deliciosa" class="w-full h-full object-cover" data-alt="A lush, healthy Monstera Deliciosa plant in a simple terracotta pot. The lighting is soft and natural, emphasizing the rich green tones and organic shape of the leaves. The setting is a bright, minimal interior, aligning with a warm, natural aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxJ6drgSo_t8dJzeuagHWhO_cq0mZH3KosFNNED8oMn8NV8JCihmtTnTGsuk0Vcb5gZxQ72UWcm-d917hesI4a75IkvQraNNEy66iMp9nZG-Qa6xWNhnyOQWHipz1RupjHtgCoZH8439u6iSHFkZHAPv3BZQ1nNiHd3HYcuEEIT4zzz9Mc01mOO3_4Q9Gnry5NqrhlXfC-K-DJ_bCJsfrkjNwIxftfMsdTRavJTPI9fcyFh3YJvrodLarDzBfa4lRA4balynO6AW0n"/>
+</div>
+<div class="flex-grow flex flex-col h-24 justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h2 class="font-h4 text-h4 text-on-background line-clamp-1">Monstera Deliciosa</h2>
+<button aria-label="Remove item" class="text-outline hover:text-error transition-colors p-1">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Medium • Nursery Pot</p>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-label-md text-label-md text-on-background">$45.00</span>
+<!-- Quantity Control -->
+<div class="flex items-center bg-surface-container rounded-lg border border-surface-variant/30">
+<button aria-label="Decrease quantity" class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-on-background active:bg-surface-variant rounded-l-lg">
+<span class="material-symbols-outlined text-[18px]" data-icon="remove">remove</span>
+</button>
+<span class="w-8 text-center font-body-sm text-body-sm text-on-background">1</span>
+<button aria-label="Increase quantity" class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-on-background active:bg-surface-variant rounded-r-lg">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-start gap-4 p-4 bg-surface-container-lowest rounded-xl shadow-sm border border-surface-variant/50">
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container flex items-center justify-center">
+<img alt="Ceramic Self-Watering Planter" class="w-full h-full object-cover" data-alt="A beautifully crafted matte ceramic self-watering planter in a soft sage green color. It sits on a light oak wooden surface bathed in gentle, diffused sunlight. The style is modern, functional, and deeply organic, perfectly matching a warm, sustainable home aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiD8weX-TgPDY-Uvs313QHMyvqcEJpBpC4P_cnENANGEe7kBaSKz7qW0ul17AUmEvl-XmRBe7MhxSRTbgQV0P6GeCV9MF0eOVK1ADWA4C1MuGScRRNpTQ0SoPl5J-5XrnYHVR-DRCbgrnsIY1Qhyoj-7AK7O1GLK6XvbAw031M5wGZ_m-dY_LaIW8cs0gZ1_kG55CsTPZOkBN-UMO5iEeVQc2HnBgqJxmzrVT1UdKutFXWg_sVzqCV-txHNAM69QoXHNgrt5E0YlhE"/>
+</div>
+<div class="flex-grow flex flex-col h-24 justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h2 class="font-h4 text-h4 text-on-background line-clamp-1">Ceramic Planter</h2>
+<button aria-label="Remove item" class="text-outline hover:text-error transition-colors p-1">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Large • Sage Green</p>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-label-md text-label-md text-on-background">$68.00</span>
+<!-- Quantity Control -->
+<div class="flex items-center bg-surface-container rounded-lg border border-surface-variant/30">
+<button aria-label="Decrease quantity" class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-on-background active:bg-surface-variant rounded-l-lg">
+<span class="material-symbols-outlined text-[18px]" data-icon="remove">remove</span>
+</button>
+<span class="w-8 text-center font-body-sm text-body-sm text-on-background">1</span>
+<button aria-label="Increase quantity" class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-on-background active:bg-surface-variant rounded-r-lg">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Order Summary & Checkout Bottom Fixed Area -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-container-lowest border-t border-surface-variant/50 shadow-[0_-8px_24px_rgba(0,0,0,0.04)] px-4 py-4 pb-safe z-40 rounded-t-2xl">
+<div class="max-w-[container-max-width] mx-auto space-y-4">
+<div class="space-y-2">
+<div class="flex justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>Subtotal</span>
+<span>$113.00</span>
+</div>
+<div class="flex justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>Shipping</span>
+<span>Calculated at checkout</span>
+</div>
+<div class="flex justify-between font-h4 text-h4 text-on-background pt-2 border-t border-surface-variant/30">
+<span>Total</span>
+<span>$113.00</span>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-on-primary-container transition-colors shadow-sm active:scale-[0.98] duration-150">
+<span class="material-symbols-outlined" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+                    Checkout securely
+                </button>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,21 @@
+# Nevro-Shop AI Context
+# This file provides context for AI agents (Claude, GPT, etc.)
+
+User-agent: *
+Allow: /api/mcp
+Allow: /shop
+Allow: /products/*
+
+# Capabilities
+Capability: list_tools
+Capability: search_products
+Capability: get_product
+
+# Endpoints
+WebMCP-Endpoint: /api/mcp
+
+# Branding
+Brand-Name: Nevro-Shop
+Primary-Category: IBC Tanks and Garden Accessories
+Market: Poland (PL)
+Currency: PLN

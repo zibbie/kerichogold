@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bloom &amp; Hearth - Product Detail</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Design System Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e0e3df",
+                        "on-tertiary-fixed-variant": "#4c463a",
+                        "on-tertiary-container": "#3c372b",
+                        "surface-container-high": "#e6e9e4",
+                        "secondary": "#8e4d33",
+                        "surface-container": "#ecefea",
+                        "primary-container": "#8ba88e",
+                        "inverse-on-surface": "#eff2ed",
+                        "outline": "#737972",
+                        "on-primary-fixed-variant": "#334d38",
+                        "on-primary-container": "#233d29",
+                        "surface": "#f7faf5",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#71361e",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#feaa8a",
+                        "on-background": "#191c1a",
+                        "primary": "#4a654e",
+                        "inverse-surface": "#2d312e",
+                        "error": "#ba1a1a",
+                        "background": "#f7faf5",
+                        "surface-container-highest": "#e0e3df",
+                        "secondary-fixed-dim": "#ffb59a",
+                        "inverse-primary": "#b0ceb2",
+                        "tertiary": "#645e50",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f7faf5",
+                        "on-tertiary-fixed": "#1f1b11",
+                        "on-secondary-container": "#783c24",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#a8a091",
+                        "on-secondary-fixed": "#380d00",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#b0ceb2",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f1f4f0",
+                        "surface-dim": "#d8dbd6",
+                        "secondary-fixed": "#ffdbce",
+                        "on-surface": "#191c1a",
+                        "on-surface-variant": "#424842",
+                        "surface-tint": "#4a654e",
+                        "outline-variant": "#c2c8c0",
+                        "on-primary-fixed": "#07200f",
+                        "tertiary-fixed-dim": "#cec6b5",
+                        "tertiary-fixed": "#ebe2d0",
+                        "primary-fixed": "#cceace"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin": "32px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "container-max-width": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Be Vietnam Pro"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "label-sm": ["Be Vietnam Pro"],
+                        "body-sm": ["Be Vietnam Pro"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "label-md": ["Be Vietnam Pro"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h4": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h1": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "h4": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased min-h-screen pb-24 md:pb-0 font-body-md text-body-md">
+<!-- TopAppBar (From Shared Components JSON) -->
+<header class="bg-[#F5F5F0] dark:bg-stone-900 font-['Plus_Jakarta_Sans'] tracking-tight flex justify-between items-center w-full px-4 h-16 sticky top-0 z-50 border-b border-stone-200 dark:border-stone-800 shadow-sm shadow-stone-200/40 dark:shadow-none">
+<button class="text-[#8BA88E] dark:text-[#A3BBA5] hover:bg-stone-200/50 dark:hover:bg-stone-800 transition-colors p-2 rounded-full active:scale-95 transition-transform duration-150 flex items-center justify-center">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="text-xl font-bold text-stone-800 dark:text-stone-100">Bloom &amp; Hearth</div>
+<button class="text-[#8BA88E] dark:text-[#A3BBA5] hover:bg-stone-200/50 dark:hover:bg-stone-800 transition-colors p-2 rounded-full active:scale-95 transition-transform duration-150 flex items-center justify-center relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-secondary rounded-full"></span>
+</button>
+</header>
+<main class="max-w-container-max-width mx-auto">
+<!-- Hero Product Image -->
+<section class="w-full relative bg-surface-container aspect-square md:aspect-video md:h-[530px] overflow-hidden">
+<img alt="Classic Terracotta Cylinder Planter" class="w-full h-full object-cover" data-alt="A beautifully crafted, minimalist terracotta cylinder planter resting on a smooth, light oak wooden table. The scene is bathed in warm, natural morning sunlight streaming through an unseen window, casting soft, diffused shadows that highlight the matte, slightly porous texture of the fired clay. The planter's rich, earthy burnt orange and muted sage tones perfectly complement the overarching organic and functional aesthetic of the light-mode UI design. A vibrant, healthy Monstera adansonii plant spills playfully over the edge, adding a touch of lively green to the grounded, sustainable composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE2sJcaNcuMqjV5jDubt7bAXSJ-Bly_ZOi44xNiaq6y6MdzmzTxXqwJbJ6tjDks98DD4bT5d7Ax9VC5as3jAoVKXKfoBEZ-IeA9VUdh69N9PHKoRv6PC9u4VPxReeRRObMzsNzN7A-IcaFcrFusnWI9sCdDHSM7m3C9mtyKN2w-8a1EiBWGSLzJE6J3o-_kbuMxaU9mP6bw1VB26OCttw5I_mNdO1C-UnVkKbEa7fcTxH2bCaNMKqSjtCPFvOBbm407RK2b9tjrDTs"/>
+</section>
+<!-- Product Details Container -->
+<section class="px-gutter py-margin md:grid md:grid-cols-12 md:gap-gutter">
+<div class="md:col-span-8 md:col-start-3 space-y-gutter">
+<!-- Title & Price Header -->
+<div class="space-y-unit">
+<div class="flex items-center gap-2 mb-2">
+<span class="inline-block bg-primary-container/20 text-primary px-3 py-1 rounded-DEFAULT font-label-sm text-label-sm uppercase tracking-wider">Sustainable</span>
+<span class="inline-block bg-surface-variant text-on-surface-variant px-3 py-1 rounded-DEFAULT font-label-sm text-label-sm uppercase tracking-wider">Best Seller</span>
+</div>
+<div class="flex flex-col md:flex-row md:justify-between md:items-end gap-2">
+<h1 class="font-h2 text-h2 text-on-surface">Classic Terracotta Cylinder</h1>
+<span class="font-h3 text-h3 text-secondary">$34.00</span>
+</div>
+</div>
+<!-- Description -->
+<div>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Bring a touch of timeless warmth to your indoor jungle. Fired from natural clay, this porous planter allows roots to breathe and excess moisture to escape, making it ideal for drought-tolerant plants. Its simple, unglazed finish ages beautifully over time.
+                    </p>
+</div>
+<hr class="border-outline-variant/30"/>
+<!-- Size Selection -->
+<div class="space-y-4">
+<h3 class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Select Size</h3>
+<div class="flex gap-4">
+<!-- Inactive Size -->
+<button class="w-14 h-14 rounded-full border border-outline-variant text-on-surface-variant flex items-center justify-center font-body-md text-body-md hover:bg-surface-variant transition-colors">
+                            4"
+                        </button>
+<!-- Active Size -->
+<button class="w-14 h-14 rounded-full border-2 border-primary bg-primary-container/10 text-primary flex items-center justify-center font-label-md text-label-md shadow-sm">
+                            6"
+                        </button>
+<!-- Inactive Size -->
+<button class="w-14 h-14 rounded-full border border-outline-variant text-on-surface-variant flex items-center justify-center font-body-md text-body-md hover:bg-surface-variant transition-colors">
+                            8"
+                        </button>
+</div>
+</div>
+<!-- Features/Highlights (Bento-ish subtle layout) -->
+<div class="grid grid-cols-2 gap-4 pt-4">
+<div class="bg-surface-container-low p-4 rounded-xl flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">water_drop</span>
+<div>
+<span class="block font-label-md text-label-md text-on-surface">Drainage Hole</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant mt-1">Includes matching saucer</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">eco</span>
+<div>
+<span class="block font-label-md text-label-md text-on-surface">Breathable</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant mt-1">Prevents root rot</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Sticky Bottom Action Bar (Mobile Priority) -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-container-lowest border-t border-outline-variant/20 p-4 md:static md:border-t-0 md:bg-transparent md:max-w-container-max-width md:mx-auto md:px-gutter md:pb-margin md:pt-0">
+<div class="md:grid md:grid-cols-12">
+<div class="md:col-span-8 md:col-start-3">
+<button class="w-full bg-primary hover:bg-on-primary-fixed-variant text-on-primary rounded-lg py-4 px-6 flex justify-center items-center gap-2 transition-colors shadow-sm active:scale-[0.98]">
+<span class="font-label-md text-label-md uppercase tracking-wider">Add to Cart</span>
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

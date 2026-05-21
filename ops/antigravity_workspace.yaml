@@ -1,0 +1,38 @@
+global_rules:
+  allow_full_project_indexing: false
+  context_scope: "open_files_only"
+  # Wyjątek pozwalający na czytanie wspólnej pamięci roju i stanu projektu
+  allowed_context_exceptions: ["Knowledge_Graph/Patterns/*", "Project_Memory/*", "skills/*"]
+
+agents:
+  agent_1_architect:
+    model: "Gemini 3.1 Pro"
+    mode: "Planning"
+    resources:
+      thinking_level: "Max"
+      context_caching: true
+    specialization: ["architecture", "complex_logic", "pure_reasoning"]
+    output_format: ["plans", "diffs"]
+
+  agent_2_fast_editor:
+    model: "Gemini 3 Flash"
+    mode: "Fast"
+    specialization: ["blade_templates", "alpine_js", "tailwind_css", "linter_fixes"]
+    enforcement_gate_command: "php artisan coach:lint" 
+
+  agent_3_mass_coder:
+    model: "Gemini 3.1 Pro"
+    specialization: ["laravel_migrations", "eloquent_models", "livewire_components"]
+    enforcement_gate_command: "php artisan test"
+    tdd_required: true          # Wymagaj testu przed implementacją
+    git_commit_per_task: true   # Atomowy commit po każdym pod-zadaniu
+    worktree_on_risky: true     # Git worktree jeśli zadanie modyfikuje >3 pliki
+
+  agent_4_scaler:
+    model: "Gemini 3 Flash"
+    specialization: ["tool_calling", "large_scale_tasks", "effort_problems"]
+    worktree_required: true     # Zawsze używaj worktree dla zadań wysiłkowych
+
+  agent_5_coordinator:
+    model: "Gemini 3.1 Pro"
+    specialization: ["information_flow", "handoffs", "organizational_awareness", "mentoring"]

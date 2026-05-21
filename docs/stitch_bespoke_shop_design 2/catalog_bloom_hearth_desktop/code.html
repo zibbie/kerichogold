@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bloom &amp; Hearth - Product Catalog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&amp;family=Plus+Jakarta+Sans:ital,wght@0,600;0,700;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#d8dbd6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#e6e9e4",
+                        "on-primary-container": "#233d29",
+                        "on-secondary-container": "#783c24",
+                        "surface-container-highest": "#e0e3df",
+                        "on-tertiary-fixed-variant": "#4c463a",
+                        "primary-fixed": "#cceace",
+                        "outline-variant": "#c2c8c0",
+                        "on-background": "#191c1a",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#ebe2d0",
+                        "surface-variant": "#e0e3df",
+                        "on-secondary-fixed": "#380d00",
+                        "inverse-on-surface": "#eff2ed",
+                        "surface-container-low": "#f1f4f0",
+                        "outline": "#737972",
+                        "tertiary": "#645e50",
+                        "on-primary-fixed": "#07200f",
+                        "inverse-primary": "#b0ceb2",
+                        "on-primary-fixed-variant": "#334d38",
+                        "primary-fixed-dim": "#b0ceb2",
+                        "error-container": "#ffdad6",
+                        "surface": "#f7faf5",
+                        "on-error-container": "#93000a",
+                        "background": "#f7faf5",
+                        "primary": "#4a654e",
+                        "secondary": "#8e4d33",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container": "#ecefea",
+                        "surface-bright": "#f7faf5",
+                        "inverse-surface": "#2d312e",
+                        "secondary-fixed-dim": "#ffb59a",
+                        "on-surface": "#191c1a",
+                        "on-tertiary-fixed": "#1f1b11",
+                        "on-secondary-fixed-variant": "#71361e",
+                        "tertiary-fixed-dim": "#cec6b5",
+                        "tertiary-container": "#a8a091",
+                        "secondary-container": "#feaa8a",
+                        "on-surface-variant": "#424842",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#8ba88e",
+                        "secondary-fixed": "#ffdbce",
+                        "on-tertiary-container": "#3c372b",
+                        "surface-tint": "#4a654e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin": "32px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "container-max-width": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Be Vietnam Pro"],
+                        "body-sm": ["Be Vietnam Pro"],
+                        "h4": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "label-sm": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "h4": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "h1": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-stone-50/95 dark:bg-stone-900/95 backdrop-blur-md sticky w-full top-0 border-b border-stone-200 dark:border-stone-800 shadow-sm z-50">
+<div class="flex justify-between items-center px-8 h-20 w-full max-w-[1280px] mx-auto">
+<div class="text-2xl font-bold text-emerald-900 dark:text-emerald-100 italic">Verdant Home</div>
+<nav class="hidden md:flex gap-6 font-plus-jakarta-sans text-sm font-medium tracking-tight">
+<a class="text-emerald-700 dark:text-emerald-400 border-b-2 border-emerald-700 pb-1 cursor-pointer active:scale-95 transition-transform hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors duration-200 px-2" href="#">Shop</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-800 cursor-pointer active:scale-95 transition-transform hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors duration-200 px-2 py-1" href="#">New Arrivals</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-800 cursor-pointer active:scale-95 transition-transform hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors duration-200 px-2 py-1" href="#">Indoor Plants</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-800 cursor-pointer active:scale-95 transition-transform hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors duration-200 px-2 py-1" href="#">Garden Tools</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-800 cursor-pointer active:scale-95 transition-transform hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors duration-200 px-2 py-1" href="#">Inspiration</a>
+</nav>
+<div class="flex items-center gap-4 text-emerald-800 dark:text-emerald-400">
+<button class="p-2 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors duration-200 rounded-full cursor-pointer active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button class="p-2 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors duration-200 rounded-full cursor-pointer active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-[1280px] mx-auto px-8 py-8 flex gap-8">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col w-64 h-fit sticky top-24 ml-8 py-6 bg-white dark:bg-stone-950 rounded-lg border border-stone-100 dark:border-stone-800 shadow-sm flex-shrink-0">
+<div class="px-6 mb-4">
+<h2 class="text-lg font-semibold text-stone-900 dark:text-white font-plus-jakarta-sans text-sm">Categories</h2>
+<p class="text-stone-500 text-xs mt-1">Shop by collection</p>
+</div>
+<nav class="flex flex-col px-2 gap-1 font-plus-jakarta-sans text-sm">
+<a class="flex items-center gap-3 px-4 py-3 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-800 dark:text-emerald-300 font-semibold rounded-md transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="potted_plant">potted_plant</span>
+                    Indoor Plants
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-stone-50 dark:hover:bg-stone-900 rounded-md transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="park">park</span>
+                    Outdoor Plants
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-stone-50 dark:hover:bg-stone-900 rounded-md transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="local_florist">local_florist</span>
+                    Pottery &amp; Planters
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-stone-50 dark:hover:bg-stone-900 rounded-md transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="content_cut">content_cut</span>
+                    Garden Care
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-stone-50 dark:hover:bg-stone-900 rounded-md transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+                    Home Decor
+                </a>
+</nav>
+</aside>
+<!-- Product Canvas -->
+<section class="flex-grow flex flex-col gap-6">
+<div class="flex justify-between items-center bg-surface-container-low p-4 rounded-lg shadow-[0_2px_8px_rgba(74,101,78,0.08)]">
+<h1 class="font-h3 text-h3 text-on-surface">Shop All Plants</h1>
+<div class="flex items-center gap-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Sort By</span>
+<select class="bg-surface-container-lowest border border-outline-variant text-on-surface font-body-sm text-body-sm rounded p-2 focus:ring-primary focus:border-primary">
+<option>Featured</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Newest Arrivals</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Product Card 1 -->
+<article class="bg-surface-container-lowest border border-surface-variant rounded-[16px] overflow-hidden flex flex-col shadow-[0_4px_12px_rgba(142,77,51,0.05)] hover:shadow-[0_8px_24px_rgba(74,101,78,0.1)] transition-shadow duration-300">
+<div class="relative aspect-[4/5] w-full overflow-hidden bg-surface-dim">
+<img alt="Monstera Deliciosa" class="w-full h-full object-cover" data-alt="A lush, vibrant green Monstera Deliciosa plant sits in a modern, matte terracotta pot. The lighting is soft, natural daylight streaming from a window out of frame, highlighting the iconic fenestrations (holes) in the large leaves. The background is a warm, light oatmeal color, creating a clean, organic, and inviting product photography aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzkI5UxuGYri2RAX6vknNis3NOm3CemeKAxrtlOoutmCXeHTo5tC6FQB9uDncy00Pq5-NePOmMTj5bFMUa5QQ8KJCmRdUsc9vzFkDOcwdQu07yxfRtnzFC0OogWwjtbrh7mV1ypVEGDMBg7vL1NCzMIYsPnHmMDth9BBof80Ci7AJBb4F5WVy-NaIF_7nf3Hrj0m_JoLfUlLit7WHbnKv7NuCPJ3TFGCI13GbgKMexkK9sFsEZVWmGQKVTYUGc6ZJioHFRi70pch7u"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded-[8px] font-label-sm text-label-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="eco">eco</span>
+                            Organic
+                        </div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<h3 class="font-label-md text-label-md text-on-surface mb-1">Monstera Deliciosa</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-grow">A classic statement plant for bright spaces.</p>
+<div class="flex justify-between items-center mt-auto">
+<span class="font-h4 text-h4 text-on-surface">$45.00</span>
+<button class="bg-primary text-on-primary hover:bg-primary/90 rounded-[8px] p-2 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="bg-surface-container-lowest border border-surface-variant rounded-[16px] overflow-hidden flex flex-col shadow-[0_4px_12px_rgba(142,77,51,0.05)] hover:shadow-[0_8px_24px_rgba(74,101,78,0.1)] transition-shadow duration-300">
+<div class="relative aspect-[4/5] w-full overflow-hidden bg-surface-dim">
+<img alt="Fiddle Leaf Fig" class="w-full h-full object-cover" data-alt="A healthy Fiddle Leaf Fig tree in a woven seagrass basket. The plant has large, glossy, dark green leaves with prominent veining. It is positioned against a soft, sage-tinted off-white wall. The lighting is diffused and even, emphasizing the plant's structural beauty and creating a calm, naturalistic mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDCMZ4ReN4ksHlSFb5OzLBYwmDONsZVSQAHMdS6lL6wnUfw000Fy05mZLKnkXl6pKoMSWGYCqpy-275LXrs0r4im_0Y3r5ubnl9vZWtY8SGuAgc3URXa5ApUshFl8xitP6HtYQhyZLL1I4SUIoIvsDKShi0JjESmzffO8wIVZf5reAeynthP9eoOIXbEj2ajV9wfObqY1WkVPEQc1JV6SonHIGXh5HNrKLro3tJqGkQGHTKcNUHHMyrflQThP-nMbP2rqTzV5rLdsM"/>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<h3 class="font-label-md text-label-md text-on-surface mb-1">Fiddle Leaf Fig</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-grow">Iconic large-leaved tree for indirect light.</p>
+<div class="flex justify-between items-center mt-auto">
+<span class="font-h4 text-h4 text-on-surface">$85.00</span>
+<button class="bg-primary text-on-primary hover:bg-primary/90 rounded-[8px] p-2 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="bg-surface-container-lowest border border-surface-variant rounded-[16px] overflow-hidden flex flex-col shadow-[0_4px_12px_rgba(142,77,51,0.05)] hover:shadow-[0_8px_24px_rgba(74,101,78,0.1)] transition-shadow duration-300">
+<div class="relative aspect-[4/5] w-full overflow-hidden bg-surface-dim">
+<img alt="Snake Plant" class="w-full h-full object-cover" data-alt="A Sansevieria (Snake Plant) with tall, sword-like leaves featuring yellow edges and mottled green centers. It is potted in a sleek, matte white ceramic cylinder. The setting is minimal, with soft shadows cast against a pale, neutral background, highlighting the plant's architectural, drought-tolerant form." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_OCbbfZ6nFMj7b5BE0Cbsstl2Xilhear1_GRQdwEi0fm4KaPgz8ymMcKYimdlTu34M_3g1BfkE02ZsRstw0CcGU7ezLERiSgqZWH4G1GTw7nkbbV9T2h0iIspDxCfyjCLNuW_ob5id37dJIt5ycZeumwPW_ggJZNgnZxJVRvsLjt238ECp5lHZw-DggO3JJpRcQ7ldL2-2CmVv4SG4I248LbgHSoPDI1MuiIdvGNQS8emUzoSwMkX0wBhYqjD9iZttdFnSRrtuv7o"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded-[8px] font-label-sm text-label-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="water_drop">water_drop</span>
+                            Low Water
+                        </div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<h3 class="font-label-md text-label-md text-on-surface mb-1">Snake Plant Laurentii</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-grow">Virtually indestructible and air-purifying.</p>
+<div class="flex justify-between items-center mt-auto">
+<span class="font-h4 text-h4 text-on-surface">$30.00</span>
+<button class="bg-primary text-on-primary hover:bg-primary/90 rounded-[8px] p-2 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 4 -->
+<article class="bg-surface-container-lowest border border-surface-variant rounded-[16px] overflow-hidden flex flex-col shadow-[0_4px_12px_rgba(142,77,51,0.05)] hover:shadow-[0_8px_24px_rgba(74,101,78,0.1)] transition-shadow duration-300">
+<div class="relative aspect-[4/5] w-full overflow-hidden bg-surface-dim">
+<img alt="Pothos Ivy" class="w-full h-full object-cover" data-alt="A lush Golden Pothos plant trailing elegantly out of a hanging macrame planter. The leaves show a beautiful variegation of emerald green and pale yellow. The background is a soft, blurry texture suggesting a bright, airy sunroom, evoking a relaxed, inviting indoor jungle aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkjafsWwqzSRHtyjapCMtb9q3Izpb8kAjPHZ4tGtJgUKkHtksyHXvsIiFI78f1GkdXp3U5o5ihISQsNoVuqtbrtxK026J7SjNh7VRpSwH2f6XEcbTTBaSm3URUWHpDLguLnN1ZKbkEdWn0EBVXfl_OUO6RXuqS4dnY8WlS3n2BZT9w_656y6HKT1vLES6-P7mvzDsdeakBgM_Rs0wscJLGh0zQ-D96RP1v8dsMW8AOI0OsraHDqiPZmJKGDOH-exypVJ2wXF9eSi3C"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded-[8px] font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="pets">pets</span>
+                            Pet Friendly
+                        </div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<h3 class="font-label-md text-label-md text-on-surface mb-1">Golden Pothos</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-grow">Fast-growing trailing vine for shelves.</p>
+<div class="flex justify-between items-center mt-auto">
+<span class="font-h4 text-h4 text-on-surface">$25.00</span>
+<button class="bg-primary text-on-primary hover:bg-primary/90 rounded-[8px] p-2 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-stone-950 w-full border-t mt-16 border-stone-200 dark:border-stone-800">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-10 w-full max-w-[1280px] mx-auto">
+<div class="text-xl font-bold text-emerald-800 font-plus-jakarta-sans text-xs uppercase tracking-widest mb-4 md:mb-0">
+                © 2024 Verdant Home. Grown with love.
+            </div>
+<nav class="flex gap-6 font-plus-jakarta-sans text-xs uppercase tracking-widest">
+<a class="text-stone-500 dark:text-stone-500 hover:text-emerald-700 dark:hover:text-emerald-300 underline-offset-4 hover:underline opacity-80 hover:opacity-100 transition-opacity" href="#">Shipping &amp; Returns</a>
+<a class="text-stone-500 dark:text-stone-500 hover:text-emerald-700 dark:hover:text-emerald-300 underline-offset-4 hover:underline opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="text-stone-500 dark:text-stone-500 hover:text-emerald-700 dark:hover:text-emerald-300 underline-offset-4 hover:underline opacity-80 hover:opacity-100 transition-opacity" href="#">Sustainability</a>
+<a class="text-stone-500 dark:text-stone-500 hover:text-emerald-700 dark:hover:text-emerald-300 underline-offset-4 hover:underline opacity-80 hover:opacity-100 transition-opacity" href="#">Contact Us</a>
+</nav>
+</div>
+</footer>
+</body></html>

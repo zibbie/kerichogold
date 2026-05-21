@@ -1,0 +1,32 @@
+{
+  "name": "Nevro-Shop — Zbiorniki IBC",
+  "short_name": "Nevro-Shop",
+  "description": "Profesjonalne zbiorniki IBC i akcesoria ogrodowe",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7faf5",
+  "theme_color": "#4a654e",
+  "icons": [
+    {
+      "src": "/images/pwa/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/pwa/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["shopping", "garden"],
+  "screenshots": [
+    {
+      "src": "/images/pwa/screenshot-mobile.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}

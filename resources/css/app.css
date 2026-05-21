@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@400;500;600&display=swap');
+@import 'tailwindcss';
+
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    /* Colors */
+    --color-sage-50: #f7faf5;
+    --color-sage-100: #cceace;
+    --color-sage-600: #4a654e;
+    --color-sage-700: #334d38;
+    
+    --color-terracotta-50: #ffdbce;
+    --color-terracotta-600: #8e4d33;
+    
+    --color-oatmeal-100: #f7faf5;
+    --color-oatmeal-200: #ecefea;
+    
+    --color-charcoal-900: #191c1a;
+
+    /* Fonts */
+    --font-sans: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
+    --font-heading: 'Plus Jakarta Sans', sans-serif;
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -2px rgba(25, 28, 26, 0.08);
+}
+
+@utility container-custom {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@layer base {
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
+    }
+}
+
+@utility scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* Zapobieganie FOUT (błyskowi tekstu) i skokom układu dla ikon Material Symbols */
+.material-symbols-outlined {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+
+/* Dynamiczne wstrzykiwanie ligatury przez CSS, co uniemożliwia wyciąganie tekstu ikony w trybie czytnika Safari */
+.material-symbols-outlined[data-icon]::before {
+    content: attr(data-icon);
+}
+

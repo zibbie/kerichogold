@@ -1,0 +1,34 @@
+Starting data migration from old MySQL to new PostgreSQL...
+Fetching products from old database...
+Found 232 products in old database.
+Migration summary: Imported 0 new, Updated 232 existing.
+Running photo migration...
+Starting photo migration from /var/www/nevro-wm/images to /var/www/html/storage/app/public/products
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[42883]: Undefined function: 7 ERROR:  operator does not exist: json <> unknown
+LINE 1: ...e" != $1) or ("gallery" is not null and "gallery" != $2)) or...
+                                                             ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts. (Connection: pgsql, SQL: select * from "products" where (("image" is not null and "image" != ) or ("gallery" is not null and "gallery" != [])) order by "id" asc limit 1000 offset 0)
+
+  at vendor/laravel/framework/src/Illuminate/Database/Connection.php:825
+    821▕                     $this->getName(), $query, $this->prepareBindings($bindings), $e
+    822▕                 );
+    823▕             }
+    824▕ 
+  ➜ 825▕             throw new QueryException(
+    826▕                 $this->getName(), $query, $this->prepareBindings($bindings), $e
+    827▕             );
+    828▕         }
+    829▕     }
+
+      [2m+10 vendor frames [22m
+
+  11  app/Console/Commands/MigratePhotosCommand.php:68
+      Illuminate\Database\Query\Builder::chunk(Object(Closure))
+      [2m+10 vendor frames [22m
+
+  22  app/Console/Commands/MigrateDataCommand.php:134
+      Illuminate\Console\Command::call("photos:migrate", ["/var/www/nevro-wm/images"])
+

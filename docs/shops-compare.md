@@ -1,0 +1,32 @@
+# Porównanie Platform E-commerce
+
+Poniższe zestawienie porównuje popularne platformy e-commerce z systemem **Nevro-shop-v2** pod kątem natywnych funkcjonalności technicznych (*out-of-the-box*).
+
+| Funkcja / Obszar | WooCommerce | PrestaShop | ShopGold | Shoper | **Nevro-shop-v2 (Laravel 11)** |
+| --- | --- | --- | --- | --- | --- |
+| **Baza danych i Architektura** | PHP. Tabela `wp_postmeta` (EAV) - nieoptymalna przy skali. | PHP / Symfony. Relacyjna struktura, wysoce skalowalna. | PHP (legacy). Płaska struktura bazy, szybka przy małej skali. | SaaS (zamknięty). Zoptymalizowana chmura, brak dostępu do bazy. | **PHP 8.3 / Laravel 11 / PostgreSQL**. Czysta architektura relacyjna + JSONB. Brak długu technicznego, najwyższa wydajność. |
+| **Zarządzanie Wariantami** | Podstawowe. Każdy wariant to osobny "post" w bazie. | Zaawansowane. Natywny generator kombinacji (ceny, wagi, EAN). | Podstawowe. Ograniczone stany magazynowe dla wariantów. | Zaawansowane. Stabilny system wariantów przypisany do ID produktu. | **Elastyczne (JSON)**. Atrybuty i personalizacje w JSON. Nieskończone kombinacje bez narzutu na wydajność bazy. |
+| **Zaawansowany Magazyn** | Brak natywnie. Wymaga ciężkich wtyczek (np. ATUM). | Natywny. Obsługa wielu magazynów fizycznych i historii dostaw. | Prosty magazyn (stan ilościowy). Brak obsługi lokalizacji. | Podstawowy + integracje ERP. Obsługa stanów minimalnych. | **Inteligentny (ShippingService)**. Logika klas wysyłkowych i wielu źródeł dostaw. Atomowe rezerwacje stanów (Pessimistic Locking). |
+| **Ścieżka Zakupowa** | Modyfikowalna, ale często wymaga wtyczek dla B2B/NIP. | Zaawansowana. Natywna walidacja NIP i obsługa grup klientów. | Standardowa, zamknięta w szablonie. Trudna w modyfikacji. | Zamknięta (One Step Checkout). Brak możliwości zmiany logiki. | **Natywny One-Page Checkout (Livewire)**. Pełna kontrola nad kodem. Natywna obsługa NIP, InPost i logiki B2B/B2C. |
+| **Silnik Promocji** | Podstawowe kupony. Złożone reguły wymagają płatnych wtyczek. | Bardzo zaawansowany. Natywny silnik reguł koszyka i warunków. | Podstawowe rabaty grupowe i proste kupony. | Rozbudowany. Promocje warunkowe i program lojalnościowy. | **Rozszerzalny**. Natywna obsługa zniżek w serwisach. Możliwość wdrożenia dowolnych reguł biznesowych bez limitów wtyczek. |
+| **Wielojęzyczność** | Brak natywnie. Wymaga wtyczek dublujących rekordy (WPML). | W pełni natywna. Przełączanie języków zaszyte w rdzeniu. | Podręczna wielojęzyczność (dodatkowe pola językowe). | Natywna w droższych pakietach. Słownikowe podejście. | **Headless-ready**. Architektura przygotowana pod i18n na poziomie modeli i frontendu. Natywna obsługa wielu walut. |
+| **Multistore** | Brak natywnie. Wymaga WordPress Multisite (trudne). | W pełni natywne. Wiele sklepów, domen i cen z 1 panelu. | Brak. Wymaga kolejnych licencji i instalacji. | Ograniczone. Wymaga kolejnych abonamentów. | **Multi-tenant ready**. Architektura pozwala na izolację danych wielu sklepów (Schema-based) w ramach jednej instalacji. |
+| **Wyszukiwanie i UX** | Podstawowe (SQL). Wymaga płatnych wtyczek (ElasticPress). | Podstawowe. Wymaga zewnętrznych silników (Doofinder) - drogie SaaS. | Proste (SQL LIKE). Mało trafne wyniki. | SaaS-Search. Brak wpływu na algorytm. | **Meilisearch (Instant Search)**. Natywny silnik w Dockerze. Błyskawiczne wyniki, fuzzy matching i pełna kontrola nad wagami. |
+| **Analityka i Marża** | Podstawowa (GTM Client-Side). | Standardowa. | Brak śledzenia zysku. | Standardowa. | **GTM Server-Side + Profit Tracking**. Śledzenie marży w czasie rzeczywistym i odporność na AdBlocki. |
+| **Płatności i BNPL** | Wtyczki (różna jakość). | Moduły (często płatne). | Podstawowe integracje. | Shoper Płatności (zamknięte). | **PayPo Deep-Link (BNPL)**. Natywne wsparcie dla płatności odroczonych zintegrowane w ścieżce zakupu. |
+| **Technologie Przyszłości** | Brak natywnie. | Brak natywnie. | Brak. | Brak. | **PWA & AI-Native (WebMCP)**. Sklep instalowalny jako aplikacja, w pełni dostępny dla agentów AI. |
+| **API (REST / GraphQL)** | REST API (natywne). Dobre wsparcie CRUD. | REST Webservice. Bezpieczne i oparte na zasobach. | Bardzo ograniczone (często tylko XML). | REST API. Bardzo potężne i dobrze udokumentowane. | **Agentic-ready (REST + WebMCP)**. Natywne API przygotowane do współpracy z agentami AI i systemami zewnętrznymi. |
+
+### Wniosek Architektoniczny
+**Nevro-shop-v2** wygrywa w kategoriach, w których gotowe platformy wymagają kompromisów (wydajność bazy, czystość kodu) lub płatnych rozszerzeń. Wykorzystanie **PostgreSQL**, **Meilisearch** i **Laravel 11** stawia ten system w klasie rozwiązań *Enterprise-ready*, zachowując jednocześnie lekkość i szybkość dzięki **TALL Stack**.
+
+### Porównanie Architektoniczne i Biznesowe
+
+| Platforma | Typ Architektury | Podstawowe Cechy | Zalety | Wady | Szacunkowy Koszt |
+| --- | --- | --- | --- | --- | --- |
+| **WooCommerce** | Open Source (Wtyczka WP) | Bazuje na WP. Elastyczna, wymaga hostingu. | • Ogromna baza wtyczek.<br>• Świetne SEO (blog + sklep). | • Zależność od WordPressa.<br>• Problemy z wydajnością przy skali. | **Software:** Darmowe.<br>**Utrzymanie:** Hosting + płatne wtyczki. |
+| **PrestaShop** | Open Source (Symfony) | Dedykowany silnik. Rozbudowane funkcje native. | • Wydajna przy dużej liczbie produktów.<br>• Zaawansowany magazyn i multistore. | • Stroma krzywa uczenia się.<br>• Bardzo drogie moduły (EUR). | **Software:** Darmowe.<br>**Utrzymanie:** VPS + drogie moduły/serwis. |
+| **ShopGold** | Licencja (Pudełkowa) | Gotowy, zamknięty skrypt PL. Self-hosted. | • Gotowe integracje PL "z pudełka".<br>• Brak abonamentu. | • Przestarzała architektura i UI.<br>• Brak możliwości rozbudowy. | **Software:** Licencja (~1.5k PLN).<br>**Utrzymanie:** Hosting. |
+| **Shoper** | SaaS (Chmura) | Platforma abonamentowa. Zarządzana przez dostawcę. | • Plug & Play.<br>• Bezpieczeństwo i aktualizacje w cenie. | • Brak dostępu do kodu (lock-in).<br>• Rosnące koszty wraz z ruchem. | **Software:** Abonament.<br>**Utrzymanie:** Prowizje + dodatki. |
+| **Nevro-shop-v2** | **Modern Framework (Laravel 11)** | **Meilisearch, PWA, AI-Native (WebMCP).** | • **Najwyższa wydajność i SEO**.<br>• **Pełna kontrola nad konwersją**.<br>• **Natywne wsparcie BNPL i Marży**. | • Wymaga hostingu (VPS).<br>• Wymaga świadomego administratora. | **Software:** Rozwiązanie dedykowane.<br>**Utrzymanie:** Standardowy VPS. |
+
