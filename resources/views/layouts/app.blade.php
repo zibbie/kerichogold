@@ -150,7 +150,7 @@
 
                 <div class="flex items-center flex-shrink-0 mr-8">
                     <a href="/" class="flex items-center">
-                        <img src="/images/logo.png" alt="Kericho Gold" width="180" height="48" class="h-10 md:h-12 w-auto transition-all">
+                        <img src="/images/logo.png?v=2" alt="Kericho Gold" width="180" height="48" class="h-10 md:h-12 w-auto transition-all">
                     </a>
                 </div>
                 
