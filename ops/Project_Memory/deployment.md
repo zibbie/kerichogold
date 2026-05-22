@@ -56,7 +56,7 @@ Zawsze najpierw wdrażaj i testuj zmiany na **Stagingu**, a po akceptacji klient
     git checkout staging
     git add .
     git commit -m "feat/fix: opis zmian"
-    git push origin staging
+    git push kericho staging
     ```
 2.  Zaloguj się na serwer przez SSH:
     ```bash
@@ -65,7 +65,7 @@ Zawsze najpierw wdrażaj i testuj zmiany na **Stagingu**, a po akceptacji klient
 3.  Przejdź do katalogu stagingu i pobierz zmiany:
     ```bash
     cd /var/www/kerichogold_staging
-    git pull origin staging
+    git pull kericho staging
     ```
 4.  Zastosuj aktualizacje wewnątrz kontenerów stagingowych:
     ```bash
@@ -93,7 +93,7 @@ Gdy zmiany na stagingu przejdą pomyślnie testy i zostaną zaakceptowane:
     ```bash
     git checkout master
     git merge staging
-    git push origin master
+    git push kericho master
     ```
 2.  Zaloguj się na serwer przez SSH:
     ```bash
@@ -102,7 +102,7 @@ Gdy zmiany na stagingu przejdą pomyślnie testy i zostaną zaakceptowane:
 3.  Przejdź do katalogu produkcyjnego i pobierz zmiany:
     ```bash
     cd /var/www/kerichogold
-    git pull origin master
+    git pull kericho master
     ```
 4.  Zastosuj aktualizacje w kontenerach produkcyjnych:
     ```bash
