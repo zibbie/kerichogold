@@ -12,7 +12,10 @@
 - **Cart & Checkout Stability**: Implemented relative quantity updates (+/- 1) to eliminate Livewire state overwrites during rapid clicking. Integrated double-submit lock in checkout and graceful handling of `Insufficient stock` exceptions (try-catch with user alerts) to prevent 500 Internal Server Errors.
 - **Infrastructure**: Debian 13 VPS (`85.215.169.120`) running Docker. Production (`https://sklep.kerichogold.com.pl`) and Staging (`https://sklep2.kerichogold.com.pl`) run successfully over HTTPS via Nginx Proxy Manager. Staging environment `.env` updated to use container-name hostnames (`kericho-db`, `kericho-redis`, `kericho-meilisearch`) for service routing on the shared external network, resolving DNS resolution errors and enabling the queue worker (`kericho-staging-queue`) to run successfully.
 
+- **Storefront Logo Update**: Replaced the legacy green "NEVRO" logo with the official "Kericho Gold" logo (featuring the tea leaves emblem and custom branding font) fetched directly from the merchant's live site, updating it across both production and staging environments.
+
 ## Recent Changes
+- **Storefront Logo Update**: Replaced the legacy `public/images/logo.png` with the official Kericho Gold storefront logo to complete the storefront rebranding.
 - **Staging Database & Cache Hostname Fixes**: Replaced legacy `db` and `redis` hostnames in staging `.env` with actual container names `kericho-db` and `kericho-redis` to allow staging containers to resolve external services.
 - **Queue Worker Stabilization**: Verified and restarted `kericho-staging-queue` container, which is now up, running, and successfully connected to Redis without connection exceptions.
 - **Let's Encrypt SSL Mapping via NPM**: Programmatically configured and verified NPM routes for `sklep.kerichogold.com.pl` and `sklep2.kerichogold.com.pl` with automatic Let's Encrypt registration.
@@ -22,13 +25,14 @@
 - **Material Symbols FOUT/CLS Prevention**: Resolved font display issue where Material Symbol ligatures rendered as raw words during page refresh. Switched GFonts to display=block and enforced width/height limits on icon spans.
 - **COD Surcharge Calculation Sync**: Fixed the discrepancy where the 5 PLN cash-on-delivery (COD) surcharge was dropped during conversion to the final Order due to server-side shipping recalculation without payment context.
 - **Filament Address Object Object Fix**: Resolved the critical bug where Filament attempted to display array-based shipping addresses as a string in the textarea, resulting in "[object Object]".
-
+- 
 ## Next Steps
 - **Admin Users Creation**: Seed initial admin users for the Filament dashboard on both production and staging environments.
 - **Product Catalog Load**: Verify product sync and catalog setup for the tea products in the Filament dashboard.
 - **Tpay Credentials & Live Mode**: Enter official production Tpay credentials in `.env` once provided by the merchant (currently using placeholders/sandbox keys).
-
+ 
 ## [UKOŃCZONE]
+- [2026-05-22] Wymiana logo sklepu w obu środowiskach (produkcyjnym i testowym) na oficjalne logo Kericho Gold (pobrane ze strony sklepu kerichogold.pl).
 - [2026-05-22] Wdrożenie nowej instalacji sklepu Kericho Gold (produkcja i staging) na nowy serwer VPS (85.215.169.120) pod domenami sklep.kerichogold.com.pl i sklep2.kerichogold.com.pl na systemie Debian 13 (Trixie).
 - [2026-05-22] Rozwiązanie problemów z rozdzielczością DNS kontenerów w środowisku stagingowym (poprawa hostów bazy i redisa w pliku .env) i pełne uruchomienie kontenera staging queue worker.
 - [2026-05-22] Skonfigurowanie Nginx Proxy Manager (NPM) na porcie 80/443 z automatycznym Let's Encrypt certyfikatem SSL dla obu domen.
