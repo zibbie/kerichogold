@@ -15,23 +15,22 @@
 - **Storefront Logo Update**: Replaced the legacy green "NEVRO" logo with the official "Kericho Gold" logo (featuring the tea leaves emblem and custom branding font) fetched directly from the merchant's live site, updating it across both production and staging environments.
 
 ## Recent Changes
+- **OrbStack VM Locking & Startup Recovery**: Resolved the `vmgr already running` startup deadlock lock by verifying GUI/VM daemon state, resulting in a successful automatic VM reboot and service recovery.
+- **Meilisearch Key Security Hardening**: Changed the Meilisearch key to a compliant 16-byte minimum length (`masterKeySecure12345`) to enable successful startup in production environment mode.
+- **Vite Frontend Compilation & 500 Fix**: Fixed a `500 Server Error` on the storefront caused by a missing Vite manifest. Compiled all assets with `npm run build` using `root` privileges inside the container to avoid `EACCES` permission blocks.
+- **Database Migrations and Mock Data Seeding**: Successfully ran Artisan migrations and DB seeds within the app container to populate the catalog.
 - **Storefront Logo Update**: Replaced the legacy `public/images/logo.png` with the official Kericho Gold storefront logo to complete the storefront rebranding.
-- **Staging Database & Cache Hostname Fixes**: Replaced legacy `db` and `redis` hostnames in staging `.env` with actual container names `kericho-db` and `kericho-redis` to allow staging containers to resolve external services.
-- **Queue Worker Stabilization**: Verified and restarted `kericho-staging-queue` container, which is now up, running, and successfully connected to Redis without connection exceptions.
-- **Let's Encrypt SSL Mapping via NPM**: Programmatically configured and verified NPM routes for `sklep.kerichogold.com.pl` and `sklep2.kerichogold.com.pl` with automatic Let's Encrypt registration.
-- **JWS Signature Verification Validation**: Verified signature checking routines on both production and staging application servers using `php artisan test:tpay-security` command (both PASS).
-- **Graceful Insufficient Stock Handling**: Bounded Livewire cart modification methods in try-catch blocks to prevent 500 Errors. Display elegant closeable error alert banners on the front-end.
-- **Safari Reader Mode (a11y) Bypass**: Resolved accessibility bug where Safari Reader Mode extracted raw icon ligatures as text. Added aria-hidden="true" to all presentational Material Symbol icon spans across templates.
-- **Material Symbols FOUT/CLS Prevention**: Resolved font display issue where Material Symbol ligatures rendered as raw words during page refresh. Switched GFonts to display=block and enforced width/height limits on icon spans.
-- **COD Surcharge Calculation Sync**: Fixed the discrepancy where the 5 PLN cash-on-delivery (COD) surcharge was dropped during conversion to the final Order due to server-side shipping recalculation without payment context.
-- **Filament Address Object Object Fix**: Resolved the critical bug where Filament attempted to display array-based shipping addresses as a string in the textarea, resulting in "[object Object]".
-- 
+
 ## Next Steps
 - **Admin Users Creation**: Seed initial admin users for the Filament dashboard on both production and staging environments.
 - **Product Catalog Load**: Verify product sync and catalog setup for the tea products in the Filament dashboard.
 - **Tpay Credentials & Live Mode**: Enter official production Tpay credentials in `.env` once provided by the merchant (currently using placeholders/sandbox keys).
  
 ## [UKOŃCZONE]
+- [2026-05-22] Rozwiązanie problemu OrbStack VM lock (vmgr context deadline exceeded) przez reset deweloperskich demonów i automatyczny reboot maszyny.
+- [2026-05-22] Skompilowanie zasobów frontendowych Vite (npm run build) wewnątrz kontenera aplikacji przy użyciu uprawnień roota, naprawiając błąd 500 (brak manifestu Vite).
+- [2026-05-22] Wdrożenie bezpiecznego klucza głównego Meilisearch (spełniającego wymóg min. 16 bajtów w środowisku produkcyjnym) oraz poprawne uruchomienie kontenera wyszukiwarki.
+- [2026-05-22] Uruchomienie migracji bazy danych i załadowanie początkowych danych (seeding) w lokalnym środowisku Docker.
 - [2026-05-22] Wymiana logo sklepu w obu środowiskach (produkcyjnym i testowym) na oficjalne logo Kericho Gold (pobrane ze strony sklepu kerichogold.pl).
 - [2026-05-22] Wdrożenie nowej instalacji sklepu Kericho Gold (produkcja i staging) na nowy serwer VPS (85.215.169.120) pod domenami sklep.kerichogold.com.pl i sklep2.kerichogold.com.pl na systemie Debian 13 (Trixie).
 - [2026-05-22] Rozwiązanie problemów z rozdzielczością DNS kontenerów w środowisku stagingowym (poprawa hostów bazy i redisa w pliku .env) i pełne uruchomienie kontenera staging queue worker.

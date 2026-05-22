@@ -38,7 +38,7 @@ services:
     networks:
       - kericho-network
     ports:
-      - "6380:6379"
+      - "6381:6379"
 
   web:
     container_name: kericho-web
