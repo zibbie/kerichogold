@@ -1,7 +1,7 @@
 # Product Requirements - Audit SEO & Marketing
 
 ## Cel Projektu
-- Przeprowadzenie pełnego audytu technicznego i marketingowego sklepu Nevro-Shop pod kątem SEO, Google Analytics, Google Ads oraz Google Merchant Center.
+- Przeprowadzenie pełnego audytu technicznego i marketingowego sklepu Kericho Gold pod kątem SEO, Google Analytics, Google Ads oraz Google Merchant Center.
 - Identyfikacja błędów w śledzeniu konwersji i brakujących atrybutów w feedach produktowych.
 
 ## Wymagania Funkcjonalne

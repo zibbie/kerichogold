@@ -1,4 +1,4 @@
-# Plan Audytu SEO & Analytics - Nevro-Shop
+# Plan Audytu SEO & Analytics - Kericho Gold
 
 ## Faza 1: Audyt Techniczny SEO
 - [x] Weryfikacja pliku `robots.txt`.

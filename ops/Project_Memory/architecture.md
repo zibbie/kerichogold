@@ -1,11 +1,11 @@
 # System Architecture Map
 
-*Dokument generowany przez SKILL: map_codebase.*
+*Dokument generowany i aktualizowany dla projektu Kericho Gold.*
 
 ## Stos Technologiczny
-- **Język/Framework:** PHP 8.2+ / Laravel 11.x, Livewire 3.x, Filament 3.x
+- **Język/Framework:** PHP 8.3 / Laravel 11.x, Livewire 3.x, Filament 3.x
 - **Frontend / Styling:** Tailwind CSS v4.0.0 (kompilacja via `@tailwindcss/vite` w Vite 8.x)
-- **Baza danych:** PostgreSQL 15 (produkcja & lokalny Docker)
+- **Baza danych:** PostgreSQL 15 (produkcja & staging & lokalny Docker)
 - **Kolejki & Cache:** Redis (alpine)
 - **Wyszukiwarka:** Meilisearch v1.7
 - **Serwer WWW & Proxy:** Nginx (alpine), Nginx Proxy Manager (jc21/nginx-proxy-manager)
@@ -25,9 +25,9 @@
 - **Nazewnictwo:** PascalCase dla komponentów Livewire i klas PHP, snake_case dla plików widoków Blade, kebab-case dla slugów/routingu.
 - **Odpowiedzialność:** Services (`app/Services`) jako serce logiki biznesowej; modele Eloquent posiadające wyłącznie relacje i casty.
 - **Git Atomicity:** Commit per task z prefixem `task-[ID]:`.
-- **Wdrożenia:** Najpierw wdrożenie i testy na staging (`shop.nevro-wm.pl`), a po zatwierdzeniu przez użytkownika — produkcja (`nevro-wm.pl`).
+- **Wdrożenia:** Najpierw wdrożenie i testy na staging (`sklep2.kerichogold.com.pl`), a po zatwierdzeniu przez użytkownika — produkcja (`sklep.kerichogold.com.pl`).
 
 ## Zależności Zewnętrzne
-- **Bramka Płatności:** Przelewy24 (obsługiwana produkcyjnie na domenie głównej, sandbox na stagingu)
+- **Bramka Płatności:** Tpay (obsługiwana produkcyjnie na domenie głównej, sandbox na stagingu z autoryzacją JWS)
 - **Google Merchant Center:** Generowanie feedu XML (`GoogleFeedController`)
 - **Google Analytics 4 / Tag Manager:** Śledzenie eCommerce i Consent Mode v2
