@@ -1,8 +1,8 @@
-# Instrukcja Pracy z Orchestratorem i Agentami (Nevro-Shop v2 - Mesh 2.0)
+# Instrukcja Pracy z Orchestratorem i Agentami (Kericho Gold - Mesh 2.0)
 
 ## 1. Topologia Systemu
-- **Orchestrator (VPS Main)**: `212.227.75.28`
-- **Agenci Lokalni**: Mesh 2.0 na `nevro-shop-v2` / `soho-pl`.
+- **Orchestrator (VPS Main)**: `85.215.169.120`
+- **Agenci Lokalni**: Mesh 2.0 na `kerichogold`.
 
 ## 2. Kluczowe Wzorce Inżynieryjne (Maj 2026)
 

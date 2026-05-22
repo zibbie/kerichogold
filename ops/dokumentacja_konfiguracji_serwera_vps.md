@@ -375,7 +375,7 @@ APP_DEBUG=true
 APP_URL=https://sklep2.kerichogold.com.pl
 
 DB_CONNECTION=pgsql
-DB_HOST=db
+DB_HOST=kericho-db
 DB_PORT=5432
 DB_DATABASE=kericho_staging
 DB_USERNAME=kericho
@@ -385,10 +385,10 @@ CACHE_STORE=redis
 QUEUE_CONNECTION=redis
 SESSION_DRIVER=database
 
-REDIS_HOST=redis
+REDIS_HOST=kericho-redis
 REDIS_PORT=6379
 
-MEILISEARCH_HOST=http://meilisearch:7700
+MEILISEARCH_HOST=http://kericho-meilisearch:7700
 MEILISEARCH_KEY=TWÓJ_MASTER_KEY
 
 # Zabezpieczenie przed robotami SEO
@@ -464,4 +464,4 @@ docker exec kericho-staging-app php artisan test
 ```
 
 ---
-*Dokumentacja przygotowana w oparciu o konfigurację Nevro-Shop v2 / Maj 2026.*
+*Dokumentacja przygotowana w oparciu o konfigurację Kericho Gold / Maj 2026.*

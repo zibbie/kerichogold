@@ -36,7 +36,7 @@ Kod lokalny nigdy nie może przypadkowo połączyć się z produkcyjnymi serwera
 
 1. **Hardkodowana Blokada Sieciowa:**
    - W module łączącym aplikację z bazą danych (np. `auth_manager.py`, `database.php`) zaimplementuj sprawdzanie wczytanego adresu (np. `DATABASE_URL`).
-   - Stwórz "czarną listę" produkcyjnych słów kluczowych i publicznych IP (np. `["nevro-shop", "nevro", "vps", "195.", "10."]`).
+   - Stwórz "czarną listę" produkcyjnych słów kluczowych i publicznych IP (np. `["kerichogold", "vps", "195.", "10."]`).
    - Stwórz "białą listę" (Whitelist) akceptowanych lokalnych hostów: `["localhost", "127.0.0.1", "db", "postgres"]`.
    - Jeśli adres bazy nie jest na białej liście lub zawiera słowa z czarnej listy, system MUSI rzucić wyjątek (np. `RuntimeError("Suicide Switch Activated")`) i natychmiast zatrzymać aplikację.
 2. **Kwarantanna:** Plik `.env` w środowisku lokalnym musi zostać bezwzględnie wyczyszczony z produkcyjnych poświadczeń serwerów VPS.
@@ -60,8 +60,8 @@ Rozwiązanie typu "Airgap" zapewniające, że nawet w przypadku katastrofalnego 
 ## Warstwa 5: Procedura Wdrożeniowa (Staging First)
 Bezwzględny zakaz wdrażania poprawek bezpośrednio na produkcję bez uprzedniej weryfikacji na środowisku stagingowym.
 
-1. **Staging First:** Każda zmiana kodu, konfiguracji lub bazy danych musi zostać najpierw wdrożona i przetestowana na serwerze stagingowym (np. `staging.nevro-wm.pl` lub kontener `staging-app`).
-2. **Human Approval:** Wdrożenie na produkcję (`v2-app`, `v2-web`, `nevro-wm.pl`) może nastąpić WYŁĄCZNIE po wyraźnym, tekstowym potwierdzeniu przez Użytkownika, że zmiana na stagingu działa poprawnie i jest gotowa do publikacji.
+1. **Staging First:** Każda zmiana kodu, konfiguracji lub bazy danych musi zostać najpierw wdrożona i przetestowana na serwerze stagingowym (np. `sklep2.kerichogold.com.pl` lub kontener `kericho-staging-app`).
+2. **Human Approval:** Wdrożenie na produkcję (`kericho-app`, `kericho-web`, `sklep.kerichogold.com.pl`) może nastąpić WYŁĄCZNIE po wyraźnym, tekstowym potwierdzeniu przez Użytkownika, że zmiana na stagingu działa poprawnie i jest gotowa do publikacji.
 3. **Frontend & Assets Stability (Tailwind v4):**
    - **Relative Paths:** Bezwzględny zakaz używania ścieżek absolutnych (np. `/var/www/html/...`) w dyrektywie `@source` w pliku `app.css`. Wszystkie ścieżki muszą być relatywne (np. `../../resources/views/...`), aby działały na każdym środowisku.
    - **Mandatory Build Trigger:** Po każdej zmianie w widokach Blade, plikach JS lub CSS na stagingu, agent MUSI wymusić proces budowania assetów (`npm run build`). 

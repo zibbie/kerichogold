@@ -1,4 +1,4 @@
-# Wzorce Rozwiązań (Nevro-Shop v2 / Laravel 11)
+# Wzorce Rozwiązań (Kericho Gold / Laravel 11)
 
 Ten dokument gromadzi "trajektorie sukcesu" wypracowane podczas budowy i stabilizacji nowego sklepu opartego na Laravel.
 
@@ -31,7 +31,7 @@ Ten dokument gromadzi "trajektorie sukcesu" wypracowane podczas budowy i stabili
 - Upewnij się, że foldery `storage` i `bootstrap/cache` mają uprawnienia zapisu dla użytkownika `www-data`.
 - Komenda naprawcza na VPS:
   ```bash
-  docker exec -u root nevro-shop-v2-app-1 chown -R www-data:www-data storage bootstrap/cache
+  docker exec -u root kericho-app chown -R www-data:www-data storage bootstrap/cache
   ```
 
 ## 5. Wzorzec "Case-Sensitive Routing"
